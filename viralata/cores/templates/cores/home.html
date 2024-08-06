@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vira Lata Intervenções Artísticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000000;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #FF4500;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .video-cover {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+        }
+
+        .video-cover video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .projetos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .projeto {
+            background-color: #FF4500;
+            color: #FFFFFF;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 5px;
+            width: 30%;
+        }
+
+        .galeria-imagens {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .galeria-imagens img {
+            width: 30%;
+            margin: 0.5rem;
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #FF4500;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e03d00;
+        }
+
+        .redes-sociais {
+            margin-top: 1rem;
+        }
+
+        .redes-sociais a {
+            color: #FF4500;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#objetivo-historico">Objetivo e Histórico</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#galeria">Galeria de Imagens</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="video-cover">
+            <video autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
+    </header>
+
+    <section id="objetivo-historico">
+        <h1>Objetivo e Histórico</h1>
+        <p>A Vira Lata Intervenções Artísticas é dedicada a...</p>
+    </section>
+
+    <section id="projetos">
+        <h2>Projetos</h2>
+        <div class="projetos">
+            <div class="projeto">
+                <h3>Muraliza Arte Pública</h3>
+                <p>Detalhes sobre os projetos de muralismo...</p>
+            </div>
+            <div class="projeto">
+                <h3>Minha Escola Colorida</h3>
+                <p>Informações sobre as intervenções artísticas em escolas...</p>
+            </div>
+            <div class="projeto">
+                <h3>Exposição em Galerias</h3>
+                <p>Descrição das exposições em galerias...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Galeria de Imagens</h2>
+        <div class="galeria-imagens">
+            <!-- Imagens -->
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="redes-sociais">
+            <a href="https://wa.me/5511999999999">WhatsApp</a>
+            <a href="https://www.instagram.com/seu_usuario">Instagram</a>
+            <a href="https://www.facebook.com/seu_usuario">Facebook</a>
+            <a href="https://www.youtube.com/c/seu_usuario">YouTube</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   database:
-    container_name: cursodjango_database
+    container_name: viralata
     image: postgres
     restart: always
     volumes:
@@ -11,4 +11,4 @@ services:
       - LC_ALL=C.UTF-8
       - POSTGRES_PASSWORD=davidson
       - POSTGRES_USER=davidson
-      - EMAIL_PORT:5432
+      - EMAIL_PORT:5432:5432
