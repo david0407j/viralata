@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %} Vira Lata Intervenções Artísticas - Home{% endblock title %}</title>
+
+    <meta name="author" content="davidson">
+    <link rel="icon" href="{% static 'img/xereu.icon.ico' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+   body {
+    background-color: #000000; /* Fundo preto para um visual mais sofisticado */
+    color: #FFFFFF; /* Texto branco para contraste com o fundo escuro */
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: #FF4500; /* Laranja vibrante para a barra de navegação */
+    padding: 15px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: #FFD700 !important; /* Cor dourada para links ao passar o mouse */
+}
+
+.hero-section {
+    background: url("{% static 'img/filho.ico' %}") no-repeat center center;
+    background-size: cover;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    height: 500px; /* Ajuste a altura conforme necessário */
+    background-blur: 10px; /* Adiciona desfoque ao fundo */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-section .btn-primary {
+    background-color: #FFD700; /* Botão dourado para destacar ações */
+    color: #000000;
+    border-color: #FFD700;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #FFC107; /* Destaque ao passar o mouse */
+    color: #000000;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #FF4500; /* Cor laranja para os títulos das seções */
+}
+
+.card {
+    background-color: #333333; /* Fundo cinza escuro para cartões */
+    color: #FFFFFF; /* Texto branco para contraste */
+    border: 1px solid #444444; /* Borda sutil para os cartões */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+}
+
+.btn-primary {
+    background-color: #FF4500;
+    color: #FFFFFF;
+    border-color: #FF4500;
+}
+
+.btn-primary:hover {
+    background-color: #FFD700;
+    border-color: #FFD700;
+}
+
+.footer {
+    background-color: #000000;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+
+.social-icons a {
+    color: #FFD700; /* Ícones sociais em dourado */
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FF4500; /* Destaque ao passar o mouse */
+}
+
+/* Estilos específicos para a galeria */
+.gallery-img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 100%;
+    border-radius: 8px; /* Arredonda os cantos das imagens */
+}
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Vira Lata Artísticas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block body %} {% endblock body %}
+
+    {% include 'cores/footer.html' with contato_email='' only %}
+    </body>
+    </html>

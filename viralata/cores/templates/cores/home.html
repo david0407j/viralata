@@ -1,210 +1,81 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vira Lata Intervenções Artísticas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #000000;
-            background-color: #FFFFFF;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background-color: #FF4500;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            display: inline;
-            margin: 0 1rem;
-        }
-
-        .nav-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .video-cover {
-            position: relative;
-            width: 100%;
-            height: 50vh;
-            overflow: hidden;
-        }
-
-        .video-cover video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .projetos {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .projeto {
-            background-color: #FF4500;
-            color: #FFFFFF;
-            padding: 1rem;
-            margin: 1rem;
-            border-radius: 5px;
-            width: 30%;
-        }
-
-        .galeria-imagens {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .galeria-imagens img {
-            width: 30%;
-            margin: 0.5rem;
-            border-radius: 5px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        label {
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-            border-radius: 5px;
-            border: 1px solid #cccccc;
-        }
-
-        button {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #FF4500;
-            color: #FFFFFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #e03d00;
-        }
-
-        .redes-sociais {
-            margin-top: 1rem;
-        }
-
-        .redes-sociais a {
-            color: #FF4500;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            font-weight: bold;
-        }
-
-        footer {
-            background-color: #000000;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#objetivo-historico">Objetivo e Histórico</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#galeria">Galeria de Imagens</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="video-cover">
-            <video autoplay loop muted>
-                <source src="video.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
+{% extends 'cores/cores.html' %}
+{% load static %}
+<title>{% block title %} Vira Lata Intervenções Artísticas- Home{% endblock title %}</title>
+{% block body %}
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>Transformando Espaços Urbanos</h1>
+            <p>Intervenções artísticas que inspiram e conectam comunidades.</p>
+            <a href="#projetos" class="btn btn-primary">Nossos Projetos</a>
+            <img src="{% static 'img/xereu.icon.ico' %}" class="rounded mx-auto d-block" alt="Rafael">
         </div>
-    </header>
-
-    <section id="objetivo-historico">
-        <h1>Objetivo e Histórico</h1>
-        <p>A Vira Lata Intervenções Artísticas é dedicada a...</p>
     </section>
 
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <div class="projetos">
-            <div class="projeto">
-                <h3>Muraliza Arte Pública</h3>
-                <p>Detalhes sobre os projetos de muralismo...</p>
+    <!-- Projetos Section -->
+    <section id="projetos" class="container my-5">
+        <h2 class="section-title">Projetos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Projeto A</h3>
+                        <p class="card-text">Intervenção artística em espaços públicos.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Mais Informações</a></div>
+                </div>
             </div>
-            <div class="projeto">
-                <h3>Minha Escola Colorida</h3>
-                <p>Informações sobre as intervenções artísticas em escolas...</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Projeto B</h3>
+                        <p class="card-text">Arte colaborativa com comunidades escolares.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Mais Informações</a></div>
+                </div>
             </div>
-            <div class="projeto">
-                <h3>Exposição em Galerias</h3>
-                <p>Descrição das exposições em galerias...</p>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Projeto C</h3>
+                        <p class="card-text">Exposições em galerias de arte.</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Mais Informações</a></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="galeria">
-        <h2>Galeria de Imagens</h2>
-        <div class="galeria-imagens">
-            <!-- Imagens -->
+  <!-- Galeria Section -->
+<section id="galeria" class="container my-5">
+    <h2 class="section-title">Galeria</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <img src="{% static 'img/amigos.ico' %}" class="gallery-img rounded" alt="Galeria 1">
         </div>
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <form action="#" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-        <div class="redes-sociais">
-            <a href="https://wa.me/5511999999999">WhatsApp</a>
-            <a href="https://www.instagram.com/seu_usuario">Instagram</a>
-            <a href="https://www.facebook.com/seu_usuario">Facebook</a>
-            <a href="https://www.youtube.com/c/seu_usuario">YouTube</a>
+        <div class="col-md-6 mb-4">
+            <img src="{% static 'img/deus.ico' %}" class="gallery-img rounded" alt="Galeria 2">
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+    <!-- Contato Section -->
+    <div class="container text-center my-5">
+        <img src="{% static 'img/oi.ico' %}" class="rounded mx-auto d-block mb-4" alt="Rafael Bertolacini">
+        
+        <h2>Sobre Rafael Bertolacini</h2>
+        <p class="lead">
+            Rafael Bertolacini é um artista visual que transcende as fronteiras entre o tradicional e o contemporâneo, criando um diálogo único entre a pintura clássica e as expressões urbanas modernas. Com um olhar aguçado para a complexidade da vida urbana, Bertolacini explora temas como identidade, memória e a relação entre o indivíduo e a cidade.
+        </p>
+        <p>
+            Seu trabalho é uma fusão de técnicas que vai desde o graffiti nas ruas até pinturas em telas, trazendo à tona narrativas visuais que capturam a essência das metrópoles e suas histórias não contadas. Cada obra de Bertolacini é uma viagem pelos contrastes e pelas nuances da experiência humana em ambientes urbanos, onde o figurativo e o abstrato se encontram para criar composições dinâmicas e provocativas.
+        </p>
+        <p>
+            Ao longo de sua carreira, Rafael Bertolacini tem participado de exposições no Brasil e no exterior, conquistando reconhecimento por sua abordagem inovadora e seu compromisso com a autenticidade artística. Além de sua produção individual, ele é ativo em projetos colaborativos e sociais, utilizando a arte como uma ferramenta de transformação e conexão comunitária.
+        </p>
+        <p>
+            Por meio de suas obras, Bertolacini não apenas embeleza os espaços que ocupa, mas também convida o público a refletir sobre a dinâmica da vida contemporânea e as narrativas que compõem o tecido das cidades. Sua arte é um convite para ver o mundo através de novas perspectivas e para encontrar beleza nas camadas mais inesperadas da experiência urbana.
+        </p>
+    </div>
+
+{% endblock body %}
