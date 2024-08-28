@@ -1,36 +1,106 @@
-<section id="contato" class="container my-5">
-    <h2 class="section-title">Contato</h2>
-    <div class="row">
-        <div class="col-md-8 mx-auto">
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="name" placeholder="Seu nome">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Seu email">
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Sua mensagem"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vira Lata Intervenções Artísticas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilo para a seção de contato */
+        #contato {
+            background-color: #000000; /* Cor de fundo preta */
+            color: #FFFFFF; /* Texto branco */
+            padding: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
 
-<footer class="footer text-center">
-    <div class="container">
-        <p>&copy; Vira Lata Intervenções Artísticas 2024. Todos os direitos reservados.</p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/seu_usuario" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/seu_usuario" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/seu_usuario" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/seu_usuario" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #FF4500; /* Cor laranja */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #contato p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        #contato ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #contato li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        #contato li strong {
+            display: block;
+            font-weight: bold;
+            color: #FF4500; /* Cor laranja */
+        }
+
+        /* Estilos para o rodapé */
+        .footer {
+            background-color: #000000; /* Cor de fundo preta */
+            color: #FFFFFF; /* Texto branco */
+            padding: 20px 0;
+            border-top: 1px solid #333333; /* Cor de borda mais clara */
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #FF4500; /* Cor laranja para ícones sociais */
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FFFFFF; /* Cor branca ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <section id="contato" class="container my-5">
+        <h2 class="section-title">Contato</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p>Para entrar em contato conosco, utilize os seguintes meios:</p>
+                <ul>
+                    <li><strong>Email:</strong> contato@viralata.com.br</li>
+                    <li><strong>Telefone:</strong> +55 11 99999-9999</li>
+                    <li><strong>Endereço:</strong> Rua Exemplo, 123, São Paulo, SP, Brasil</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; Vira Lata Intervenções Artísticas 2024. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/seu_usuario" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/seu_usuario" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/seu_usuario" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/seu_usuario" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
