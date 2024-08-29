@@ -1,8 +1,9 @@
 from django.urls import path
 
-from viralata.cores.views import home
+from viralata.cores.views import cores
+
 
 app_name = "cores"
 urlpatterns = [
-    path("", home, name="home"),
+    path("", cores, name="cores"),
 ]

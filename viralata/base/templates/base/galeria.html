@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{% block title %} Vira Lata Intervenções Artísticas {% endblock title %}</title>
+
+</head>
+<body>
+    <header>
+        <p class="card-text">Intervenção artística em espaços públicos.</p>
+    </header>
+    <main>
+        <div class="Galeria">
+            {% for foto in fotos %}
+                <a href="{{ fotos.image.url }}" class="galeria-items">
+                    <img src="{{ fotos.image.url }}" alt="{{ fotos.name }}">
+                </a>
+            {% endfor %}
+        </div>        
+    </main>
+    <footer>
+        <span>Copyright &copy; | Fernando Leonid</span>
+    </footer>
+</body>
+</html>

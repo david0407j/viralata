@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 
-def home(request):
+def cores(request):
     return render(request, "cores/home.html")

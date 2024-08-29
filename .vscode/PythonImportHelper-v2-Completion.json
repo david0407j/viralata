@@ -52,29 +52,43 @@
         "documentation": {}
     },
     {
-        "label": "django.utils.timezone",
-        "kind": 6,
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "detail": "django.utils.timezone",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "viralata.cores.models",
-        "kind": 6,
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "importPath": "viralata.cores.models",
-        "description": "viralata.cores.models",
-        "detail": "viralata.cores.models",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "viralata.cores.models",
-        "description": "viralata.cores.models",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "viralata.cores.models",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -118,11 +132,35 @@
         "documentation": {}
     },
     {
-        "label": "reverse",
-        "importPath": "django.urls",
-        "description": "django.urls",
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
         "isExtraImport": true,
-        "detail": "django.urls",
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
@@ -150,11 +188,85 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "Foto",
+        "importPath": "viralata.base.models",
+        "description": "viralata.base.models",
+        "isExtraImport": true,
+        "detail": "viralata.base.models",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "viralata.cores.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "viralata.cores.models",
+        "description": "viralata.cores.models",
+        "detail": "viralata.cores.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "viralata.cores.models",
+        "description": "viralata.cores.models",
+        "isExtraImport": true,
+        "detail": "viralata.cores.models",
         "documentation": {}
     },
     {
@@ -183,27 +295,11 @@
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "messages",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -383,27 +479,11 @@
         "documentation": {}
     },
     {
-        "label": "home",
+        "label": "cores",
         "importPath": "viralata.cores.views",
         "description": "viralata.cores.views",
         "isExtraImport": true,
         "detail": "viralata.cores.views",
-        "documentation": {}
-    },
-    {
-        "label": "home",
-        "importPath": "viralata.cores.views",
-        "description": "viralata.cores.views",
-        "isExtraImport": true,
-        "detail": "viralata.cores.views",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -490,6 +570,14 @@
         "documentation": {}
     },
     {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -504,6 +592,60 @@
         "description": ".venv.bin.jp",
         "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
         "detail": ".venv.bin.jp",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "viralata.base.migrations.0001_initial",
+        "description": "viralata.base.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Fotos',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=100)),",
+        "detail": "viralata.base.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "viralata.base.migrations.0002_foto_delete_fotos",
+        "description": "viralata.base.migrations.0002_foto_delete_fotos",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('base', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Foto',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=100)),",
+        "detail": "viralata.base.migrations.0002_foto_delete_fotos",
+        "documentation": {}
+    },
+    {
+        "label": "CarAdmin",
+        "kind": 6,
+        "importPath": "viralata.base.admin",
+        "description": "viralata.base.admin",
+        "peekOfCode": "class CarAdmin(admin.ModelAdmin):\n    list_display = (\"name\", \"description\")\n    search_fields = (\"name\",)",
+        "detail": "viralata.base.admin",
+        "documentation": {}
+    },
+    {
+        "label": "Foto",
+        "kind": 6,
+        "importPath": "viralata.base.models",
+        "description": "viralata.base.models",
+        "peekOfCode": "class Foto(models.Model):\n    name = models.CharField(max_length=100)\n    image = models.ImageField(upload_to=\"fotos/\")\n    description = models.TextField(blank=True)\n    def __str__(self):\n        return self.name",
+        "detail": "viralata.base.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "viralata.base.urls",
+        "description": "viralata.base.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"galeria/\", galeria, name=\"galeria\"),\n]",
+        "detail": "viralata.base.urls",
+        "documentation": {}
+    },
+    {
+        "label": "galeria",
+        "kind": 2,
+        "importPath": "viralata.base.views",
+        "description": "viralata.base.views",
+        "peekOfCode": "def galeria(request):\n    fotos = Foto.objects.all()\n    return render(request, \"galeria.html\", {\"fotos\": fotos})",
+        "detail": "viralata.base.views",
         "documentation": {}
     },
     {
@@ -610,7 +752,7 @@
         "kind": 5,
         "importPath": "viralata.cores.urls",
         "description": "viralata.cores.urls",
-        "peekOfCode": "app_name = \"cores\"\nurlpatterns = [\n    path(\"\", home, name=\"home\"),\n]",
+        "peekOfCode": "app_name = \"cores\"\nurlpatterns = [\n    path(\"\", cores, name=\"cores\"),\n]",
         "detail": "viralata.cores.urls",
         "documentation": {}
     },
@@ -619,16 +761,16 @@
         "kind": 5,
         "importPath": "viralata.cores.urls",
         "description": "viralata.cores.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", home, name=\"home\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", cores, name=\"cores\"),\n]",
         "detail": "viralata.cores.urls",
         "documentation": {}
     },
     {
-        "label": "home",
+        "label": "cores",
         "kind": 2,
         "importPath": "viralata.cores.views",
         "description": "viralata.cores.views",
-        "peekOfCode": "def home(request):\n    return render(request, \"cores/home.html\")",
+        "peekOfCode": "def cores(request):\n    return render(request, \"cores/home.html\")",
         "detail": "viralata.cores.views",
         "documentation": {}
     },
@@ -727,7 +869,7 @@
         "kind": 5,
         "importPath": "viralata.settings",
         "description": "viralata.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"collectfast\",\n    \"viralata.cores\",\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"collectfast\",\n    \"viralata.cores\",\n    \"viralata.base\",",
         "detail": "viralata.settings",
         "documentation": {}
     },
@@ -925,7 +1067,7 @@
         "kind": 5,
         "importPath": "viralata.urls",
         "description": "viralata.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", home),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"viralata.cores.urls\")),\n    path(\"\", include(\"viralata.base.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "viralata.urls",
         "documentation": {}
     },
