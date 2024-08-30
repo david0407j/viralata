@@ -2,7 +2,6 @@ version: "3.3"
 
 services:
   database:
-    container_name: viralata
     image: postgres
     restart: always
     volumes:
@@ -11,4 +10,9 @@ services:
       - LC_ALL=C.UTF-8
       - POSTGRES_PASSWORD=davidson
       - POSTGRES_USER=davidson
-      - EMAIL_PORT:5432:5432
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=viralata_db
+    ports:
+      - 5432:5432
+    expose:
+      - "5432"
