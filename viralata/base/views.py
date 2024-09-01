@@ -1,7 +1,15 @@
 from django.shortcuts import render
-from viralata.base.models import Foto
+from .models import Foto, Categoria
 
 
 def galeria(request):
-    fotos = Foto.objects.all()
-    return render(request, "base/galeria.html", {"fotos": fotos})
+    categoria_id = request.GET.get("categoria")
+    if categoria_id:
+        fotos = Foto.objects.filter(categoria_id=categoria_id)
+    else:
+        fotos = Foto.objects.all()
+
+    categorias = Categoria.objects.all()
+    return render(
+        request, "base/galeria.html", {"fotos": fotos, "categorias": categorias}
+    )
