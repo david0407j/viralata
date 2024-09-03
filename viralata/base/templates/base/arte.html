@@ -1,0 +1,158 @@
+{% extends 'cores/cores.html' %}
+{% load static %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            height: 200px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px; 
+            padding-bottom: 30px; 
+        }
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            color: #f5f0eb;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 2vw;
+            padding: 0 2vw;
+        }
+        .gallery-items {
+            width: 340px;
+            border: 10px solid hsla(30, 27%, 94%, 0.972);
+            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
+            flex-grow: 1;
+            transition: transform .5s linear;
+            text-align: center;
+        }
+        .gallery-items img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+        }
+        .gallery-items:hover {
+            transform: scale(1.1);
+        }
+        .gallery-items h2 {
+            font-size: 1.2rem;
+            margin: 10px 0 5px;
+            color: #f5f0eb;
+        }
+        .gallery-items p {
+            font-size: 1rem;
+            color: #d3d3d3;
+            margin: 10px 15px 15px;
+            line-height: 1.4;
+            font-family: 'Georgia', serif;
+            text-align: center;
+        }
+        footer {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(246, 241, 241);
+            font-style: italic;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Intervenção artística em espaços públicos{% endblock header %}</h1>
+    </header>
+    <main>
+        <div class="gallery-container">
+            {% for foto in fotos %}
+                <div class="gallery-items">
+                    <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
+                        <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
+                    </a>
+                    <h2>{{ foto.name }}</h2>
+                    <p>{{ foto.description }}</p> 
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Fullscreen overlay -->
+    <div id="fullscreen-overlay" class="overlay">
+        <span id="close-btn" class="close-btn">&times;</span>
+        <img id="fullscreen-image" src="" alt="">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('fullscreen-overlay');
+            const fullscreenImage = document.getElementById('fullscreen-image');
+            const closeBtn = document.getElementById('close-btn');
+
+            document.querySelectorAll('.image-link').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    fullscreenImage.src = this.dataset.imageUrl;
+                    fullscreenImage.alt = this.dataset.imageAlt;
+                    overlay.style.display = 'flex';
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+
+            overlay.addEventListener('click', function(event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock body %}

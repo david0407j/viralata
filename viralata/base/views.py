@@ -1,18 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Foto, Categoria
 
 
-def galeria(request):
+def galeria(request, slug=None):
     titulo = "Galeria"
+    template_name = "base/galeria.html"
 
-    if "arte" in request.path:
+    if slug:
+        categoria = get_object_or_404(Categoria, nome__iexact=slug)
+        fotos = Foto.objects.filter(categoria=categoria)
+        titulo = categoria.nome.capitalize()
+        if slug.lower() in ["arte", "projeto"]:
+            template_name = f"base/{slug}.html"
+    elif "arte" in request.path:
         titulo = "Arte"
+        template_name = "base/arte.html"
+        fotos = Foto.objects.filter(categoria__nome__iexact="arte")
     elif "projeto" in request.path:
         titulo = "Projeto"
-
-    categoria_id = request.GET.get("categoria")
-    if categoria_id:
-        fotos = Foto.objects.filter(categoria_id=categoria_id)
+        template_name = "base/projeto.html"
+        fotos = Foto.objects.filter(categoria__nome__iexact="projeto")
     else:
         fotos = Foto.objects.all()
 
@@ -20,6 +27,6 @@ def galeria(request):
 
     return render(
         request,
-        "base/galeria.html",
+        template_name,
         {"fotos": fotos, "categorias": categorias, "titulo": titulo},
     )

@@ -7,6 +7,10 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        verbose_name = "Categoria"
+        verbose_name_plural = "Categorias"
+
 
 class Foto(models.Model):
     name = models.CharField(max_length=100)
@@ -18,3 +22,7 @@ class Foto(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Foto"
+        verbose_name_plural = "Fotos"
