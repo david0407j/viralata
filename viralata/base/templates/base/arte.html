@@ -104,22 +104,19 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>{% block header %}Intervenção artística em espaços públicos{% endblock header %}</h1>
-    </header>
-    <main>
-        <div class="gallery-container">
-            {% for foto in fotos %}
-                <div class="gallery-items">
-                    <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
-                        <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
-                    </a>
-                    <h2>{{ foto.name }}</h2>
-                    <p>{{ foto.description }}</p> 
-                </div>
-            {% endfor %}
-        </div>
-    </main>
+    <h1>{{ titulo }}</h1>
+    <div class="gallery">
+        {% for foto in fotos %}
+            <div class="photo">
+                <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
+                <p>{{ foto.name }}</p>
+                <p>{{ foto.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
 
     <!-- Fullscreen overlay -->
     <div id="fullscreen-overlay" class="overlay">
