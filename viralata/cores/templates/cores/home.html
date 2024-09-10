@@ -7,7 +7,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
         <iframe 
-            src="https://player.vimeo.com/video/1003424840?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1" 
+            src="https://player.vimeo.com/video/1003424840?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1" 
             frameborder="0" 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; object-fit: cover;" 
@@ -18,7 +18,7 @@
 <section>
     <div class="container text-center" style=" z-index: 2; color: rgb(237, 229, 223); text-align: center;">
         <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); animation: fadeInUp 1s ease-out;">Transformando Espaços Urbanos</h1>
-        <p style="font-size: 1.25em; margin-bottom: 30px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); animation: fadeInUp 1.2s ease-out;">Intervenções artísticas que inspiram e conectam comunidades.</p>
+        <p style="font-size: 2.5em; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); animation: fadeInUp 1.2s ease-out;">Intervenções artísticas que inspiram e conectam comunidades.</p>
         <a href="#projetos" class="btn btn-primary" style="background-color: #FF4500; border-color: #FF4500; font-size: 1.25em; padding: 10px 20px; animation: fadeInUp 1.4s ease-out;">Nossos Projetos</a>
         <div class="mt-4" style="animation: fadeInUp 1.6s ease-out;">
             <img src="{% static 'img/xereu.icon.ico' %}" class="rounded mx-auto d-block" alt="Rafael" style="max-width: 150px;">
@@ -58,76 +58,122 @@
     }
 </style>
 
-<!-- Projetos Section -->
 <section id="projetos" class="container my-5">
-    <h2 class="section-title">Projetos</h2>
+    <h2 class="section-title">Editais Culturais</h2>
     <div class="row">
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Projeto A</h3>
+            <div class="card h-100 bg-image" style="background-image: url('{% static 'img/filho.ico' %}');">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Edital Cultural A</h3>
                     <p class="card-text">Intervenção artística em espaços públicos.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'base:galeria' %}">Mais Informações</a></div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary btn-sm" href="{% url 'base:galeria' %}"">Mais Informações</a>
+                </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Projeto B</h3>
+            <div class="card h-100 bg-image" style="background-image: url('{% static 'img/' %}');">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Edital Cultural B</h3>
                     <p class="card-text">Arte colaborativa com comunidades escolares.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'base:arte' %}">Mais Informações</a></div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary btn-sm" href="">Mais Informações</a>
+                </div>
             </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Projeto C</h3>
+            <div class="card h-100 bg-image" style="background-image: url('{% static 'img/tmj.jpg' %}');">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Edital Cultural C</h3>
                     <p class="card-text">Exposições em galerias de arte.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'base:projeto' %}">Mais Informações</a></div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary btn-sm" href="">Mais Informações</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<style>
+    /* Estilos adicionais para o carrossel */
+    .carousel-inner .carousel-item img {
+        object-fit: cover;
+        height: 500px; /* Ajuste a altura conforme necessário */
+        border-radius: 8px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+    }
+
+    /* Estilos para a seção de projetos */
+    #projetos .card {
+        border: 1px solid #FF4500; /* Borda laranja para os cards */
+    }
+
+    #projetos .card-title {
+        color: #FF4500; /* Título laranja */
+    }
+
+    #projetos .btn-primary {
+        background-color: #FF4500; /* Botão laranja */
+        border-color: #FF4500; /* Borda do botão laranja */
+    }
+
+    #projetos .btn-primary:hover {
+        background-color: #FFC107; /* Cor do botão ao passar o mouse */
+        border-color: #FFC107; /* Borda do botão ao passar o mouse */
+    }
+</style>
+
+<style>
+/* Estilos adicionais para o carrossel */
+.carousel-inner .carousel-item img {
+    object-fit: cover;
+    height: 500px; /* Ajuste a altura conforme necessário */
+    border-radius: 8px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+/* Transição suave entre as imagens */
+.carousel-item-next, .carousel-item-prev, .carousel-item-active {
+    transition: transform 0.6s ease;
+}
 
 
-  <!-- Galeria Section -->
+    </style>
+    <!-- Galeria Section -->
 <section id="galeria" class="container my-5">
     <h2 class="section-title">Galeria</h2>
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <img src="{% static 'img/amigos.jpg' %}" class="gallery-img rounded" alt="Galeria 1" data-bs-toggle="modal" data-bs-target="#imagemModal1">
+    <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/amigos.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/deus.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria 2">
+            </div>
+            <!-- Adicione mais items aqui se necessário -->
         </div>
-        <div class="col-md-6 mb-4">
-            <img src="{% static 'img/deus.jpg' %}" class="gallery-img rounded" alt="Galeria 2" data-bs-toggle="modal" data-bs-target="#imagemModal2">
-        </div>
+        <a class="carousel-control-prev" href="#carouselGaleria" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselGaleria" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
     </div>
 </section>
-
-<!-- Modal 1 -->
-<div class="modal fade" id="imagemModal1" tabindex="-1" aria-labelledby="imagemModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="{% static 'img/amigos.jpg' %}" class="img-fluid" alt="Galeria 1">
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="modal fade" id="imagemModal2" tabindex="-1" aria-labelledby="imagemModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="{% static 'img/deus.jpg' %}" class="img-fluid" alt="Galeria 2">
-            </div>
-        </div>
-    </div>
-</div>
-
     <!-- Contato Section -->
     <div class="container text-center my-5" style="color: #FFFFFF;">
         <img src="{% static 'img/oi.ico' %}" class="rounded mx-auto d-block mb-4" alt="Rafael Bertolacini">
@@ -136,13 +182,13 @@
         <p class="lead">
             Rafael Bertolacini é um artista visual que transcende as fronteiras entre o tradicional e o contemporâneo, criando um diálogo único entre a pintura clássica e as expressões urbanas modernas. Com um olhar aguçado para a complexidade da vida urbana, Bertolacini explora temas como identidade, memória e a relação entre o indivíduo e a cidade.
         </p>
-        <p>
+        <p><p class="lead">
             Seu trabalho é uma fusão de técnicas que vai desde o graffiti nas ruas até pinturas em telas, trazendo à tona narrativas visuais que capturam a essência das metrópoles e suas histórias não contadas. Cada obra de Bertolacini é uma viagem pelos contrastes e pelas nuances da experiência humana em ambientes urbanos, onde o figurativo e o abstrato se encontram para criar composições dinâmicas e provocativas.
         </p>
-        <p>
+        <p><p class="lead">
             Ao longo de sua carreira, Rafael Bertolacini tem participado de exposições no Brasil e no exterior, conquistando reconhecimento por sua abordagem inovadora e seu compromisso com a autenticidade artística. Além de sua produção individual, ele é ativo em projetos colaborativos e sociais, utilizando a arte como uma ferramenta de transformação e conexão comunitária.
         </p>
-        <p>
+        <p><p class="lead">
             Por meio de suas obras, Bertolacini não apenas embeleza os espaços que ocupa, mas também convida o público a refletir sobre a dinâmica da vida contemporânea e as narrativas que compõem o tecido das cidades. Sua arte é um convite para ver o mundo através de novas perspectivas e para encontrar beleza nas camadas mais inesperadas da experiência urbana.
         </p>
     </div>
