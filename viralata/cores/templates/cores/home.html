@@ -7,7 +7,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
         <iframe 
-            src="https://player.vimeo.com/video/1003424840?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1" 
+            src="https://player.vimeo.com/video/1003424840?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1" 
             frameborder="0" 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; object-fit: cover;" 
@@ -57,45 +57,45 @@
         }
     }
 </style>
-
 <section id="projetos" class="container my-5">
     <h2 class="section-title">Editais Culturais</h2>
     <div class="row">
+        <!-- Card 1 -->
         <div class="col-md-4 mb-4">
-            <div class="card h-100 bg-image" style="background-image: url('{% static 'img/filho.ico' %}');">
-                <div class="card-body text-center">
-                    <h3 class="card-title">Edital Cultural A</h3>
+            <div class="card h-100 position-relative overflow-hidden">
+                <div class="bg-image" style="background-image: url('{% static 'img/filho.ico' %}'); background-size: cover; background-position: center; height: 300px;"></div>
+                <!-- Overlay escondido inicialmente, aparece no hover -->
+                <div class="card-body text-center overlay">
                     <p class="card-text">Intervenção artística em espaços públicos.</p>
-                </div>
-                <div class="card-footer text-center">
-                    <a class="btn btn-primary btn-sm" href="{% url 'base:galeria' %}"">Mais Informações</a>
+                    <a class="btn btn-primary btn-sm" href="{% url 'base:galeria' %}">Mais Informações</a>
                 </div>
             </div>
         </div>
+        
+        <!-- Card 2 -->
         <div class="col-md-4 mb-4">
-            <div class="card h-100 bg-image" style="background-image: url('{% static 'img/' %}');">
-                <div class="card-body text-center">
-                    <h3 class="card-title">Edital Cultural B</h3>
+            <div class="card h-100 position-relative overflow-hidden">
+                <div class="bg-image" style="background-image: url('{% static 'img/davidson.ico' %}'); background-size: cover; background-position: center; height: 300px;"></div>
+                <div class="card-body text-center overlay">
                     <p class="card-text">Arte colaborativa com comunidades escolares.</p>
-                </div>
-                <div class="card-footer text-center">
                     <a class="btn btn-primary btn-sm" href="">Mais Informações</a>
                 </div>
             </div>
         </div>
+
+        <!-- Card 3 -->
         <div class="col-md-4 mb-4">
-            <div class="card h-100 bg-image" style="background-image: url('{% static 'img/tmj.jpg' %}');">
-                <div class="card-body text-center">
-                    <h3 class="card-title">Edital Cultural C</h3>
+            <div class="card h-100 position-relative overflow-hidden">
+                <div class="bg-image" style="background-image: url('{% static 'img/tmj.ico' %}'); background-size: cover; background-position: center; height: 300px;"></div>
+                <div class="card-body text-center overlay">
                     <p class="card-text">Exposições em galerias de arte.</p>
-                </div>
-                <div class="card-footer text-center">
                     <a class="btn btn-primary btn-sm" href="">Mais Informações</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <style>
     /* Estilos adicionais para o carrossel */
     .carousel-inner .carousel-item img {
