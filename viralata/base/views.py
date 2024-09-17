@@ -5,7 +5,7 @@ from .models import Foto, Projeto
 def galeria(request):
     titulo = "Galeria"
     template_name = "base/galeria.html"
-    fotos = Foto.objects.all()
+    fotos = Foto.objects.filter(projeto__slug="galeria")
     projetos = Projeto.objects.all()
 
     return render(
