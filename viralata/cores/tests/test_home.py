@@ -33,5 +33,5 @@ def test_conteudo_video(
 ):
     assert_contains(
         resp,
-        f"https://player.vimeo.com/video/1003424840?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1",
+        "https://player.vimeo.com/video/1003424840?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1",
     )

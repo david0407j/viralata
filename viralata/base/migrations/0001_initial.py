@@ -8,34 +8,58 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Projeto',
+            name="Projeto",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=32, unique=True)),
-                ('slug', models.SlugField(blank=True, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nome", models.CharField(max_length=32, unique=True)),
+                ("slug", models.SlugField(blank=True, unique=True)),
             ],
             options={
-                'verbose_name': 'Projeto',
-                'verbose_name_plural': 'Projetos',
+                "verbose_name": "Projeto",
+                "verbose_name_plural": "Projetos",
             },
         ),
         migrations.CreateModel(
-            name='Foto',
+            name="Foto",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('image', models.ImageField(upload_to='fotos/')),
-                ('description', models.TextField(blank=True)),
-                ('projeto', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='fotos', to='base.projeto')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("image", models.ImageField(upload_to="fotos/")),
+                ("description", models.TextField(blank=True)),
+                (
+                    "projeto",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="fotos",
+                        to="base.projeto",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Foto',
-                'verbose_name_plural': 'Fotos',
+                "verbose_name": "Foto",
+                "verbose_name_plural": "Fotos",
             },
         ),
     ]
