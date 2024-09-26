@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vira Lata Intervenções Artísticas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #contato {
+            background-color: #000000; 
+            color: #FFFFFF; 
+            padding: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #FF4500; 
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #contato p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        #contato ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #contato li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        #contato li strong {
+            display: block;
+            font-weight: bold;
+            color: #FF4500; 
+        }
+
+        .footer {
+            background-color: #000000; 
+            color: #FFFFFF;
+            padding: 20px 0;
+            border-top: 1px solid #333333; 
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #FF4500;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <section id="contato" class="container my-5">
+        <h2 class="section-title">Contato</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p>Para entrar em contato conosco, utilize os seguintes meios:</p>
+                <ul>
+                    <ul class="contact-info" aria-label="Informações de Contato">
+                        <li>
+                            <strong>Email:</strong> 
+                            <a href="mailto:{{ contato_email }}" class="text-light">{{ contato_email }}</a>
+                        </li>
+                        <li>
+                            <strong>Telefone:</strong> +55 31 98636-5346
+                        </li>
+                        <li>
+                            <strong>Endereço:</strong> Rua Mopagé, 239, Novo Eldorado, Contagem - MG, Brasil
+                        </li>
+                    </ul>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; Vira Lata Intervenções Artísticas 2024. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/seu_usuario" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/seu_usuario" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/seu_usuario" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
