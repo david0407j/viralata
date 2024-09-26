@@ -19,6 +19,9 @@ pytest = "^8.3.2"
 pillow = "^10.4.0"
 ipython = "^8.27.0"
 ipdb = "^0.13.13"
+model-bakery = "^1.19.5"
+psycopg2 = "^2.9.9"
+gunicorn = "^23.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest-django = "^4.8.0"
