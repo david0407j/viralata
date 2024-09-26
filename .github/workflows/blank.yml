@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - cores
+
 jobs:
   build:
     env:
@@ -21,20 +22,27 @@ jobs:
           POSTGRES_PASSWORD: davidson
           POSTGRES_DB: postgres
         ports: [ '5432:5432' ]
+
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
           python-version: 3.11
           architecture: x64
-      - name: Copiar Configurações .env
+
+      - name: Criar .env manualmente
         run: |
-          cp contrib/.env-sample .env
+          echo "POSTGRES_USER=davidson" >> .env
+          echo "POSTGRES_PASSWORD=davidson" >> .env
+          echo "POSTGRES_DB=postgres" >> .env
+
       - name: Instalar dependências
         run: |
           pip install poetry
-          poetry sync -d
+          poetry install
+
       - name: Rodar flake8
         run: | 
           poetry run flake8
