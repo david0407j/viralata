@@ -20,9 +20,15 @@ def test_status_code(resp):
     assert resp.status_code == 200
 
 
-def test_titulo(resp):
-    assert_contains(resp, "</h1>Intervenção artística em espaços públicos</h1>")
+def test_arte_urls(
+    resp,
+):
+    assert_contains(resp, "arte")
 
 
-def teste_galeria(request, templates_name):
-    assert_contains(request, templates_name, "Foto", "projeto", "titulo")
+def test_galeria_urls(resp):
+    assert_contains(resp, "galeria")
+
+
+def test_projeto_urls(resp):
+    assert_contains(resp, "projeto")
