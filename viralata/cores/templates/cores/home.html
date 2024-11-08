@@ -145,8 +145,8 @@
              <div class="card h-100 position-relative overflow-hidden shadow-sm">
                  <div class="bg-image" style="background-image: url('{% static 'img/davidson.ico' %}');"></div>
                  <div class="card-body text-center overlay">
-                     <p class="card-text">Festival Muraliza Arte Pública.</p>
-                     <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:projeto' slug='projetos' %}">Mais Informações</a>
+                    <p class="card-text">Festival muraliza arte pública.</p>
+                    <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:cultura' slug='cultura' %}">Mais Informações</a>
                  </div>
              </div>
          </div>
@@ -175,29 +175,71 @@
 
 
     </style>
-    <!-- Galeria Section -->
+<!-- Galeria Section -->
 <section id="galeria" class="container my-5">
-    <h2 class="section-title">Galeria</h2>
+    <h2 class="section-title text-center">Galeria</h2>
     <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{% static 'img/amigos.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria 1">
+                <img src="{% static 'img/amigos.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Amigos">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'img/deus.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria 2">
+                <img src="{% static 'img/oi.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Io">
             </div>
-            <!-- Adicione mais items aqui se necessário -->
+            <div class="carousel-item">
+                <img src="{% static 'img/RAFA-2.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 10C">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/RAFA-19.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 19">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/RAFA-13.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 13">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/viaduto contagem-46(1).jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Viaduto Contagem">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/deus.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Deus">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/deus.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Deus">
+            </div>
+            <!-- Adicione mais itens aqui se necessário -->
         </div>
-        <a class="carousel-control-prev" href="#carouselGaleria" role="button" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselGaleria" role="button" data-bs-slide="next">
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-        </a>
+        </button>
     </div>
 </section>
+
+<style>
+    /* Estilo adicional para a imagem na galeria */
+    .gallery-img {
+        object-fit: cover;
+        height: 500px; /* Ajuste conforme necessário */
+    }
+
+    .carousel-item img {
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-item img:hover {
+        transform: scale(1.05);
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: #FF4500;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+</style>
+
     <!-- Contato Section -->
     <div class="container text-center my-5" style="color: #FFFFFF;">
         <img src="{% static 'img/oi.ico' %}" class="rounded mx-auto d-block mb-4" alt="Rafael Bertolacini">

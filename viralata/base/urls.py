@@ -9,4 +9,5 @@ urlpatterns = [
     path("galeria/", views.galeria, name="galeria"),
     path("arte/<str:slug>/", views.galeria_arte, name="arte"),
     path("projeto/<str:slug>/", views.galeria_projeto, name="projeto"),
+    path("cultura/<str:slug>/", views.galeria_cultura, name="cultura"),
 ]
