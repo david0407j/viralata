@@ -17,11 +17,11 @@
     <style>
         /* Variáveis de cores */
         :root {
-            --color-primary: #FF4500; /* Laranja */
+            --color-primary: hsl(15, 8%, 10%); /* Laranja */
             --color-secondary: #000000; /* Preto */
             --color-accent: #FFD700; /* Amarelo brilhante */
             --color-light: #FFFFFF;
-            --color-dark: #333333;
+            --color-dark: hwb(15 3% 1%);
         }
 
         body {
@@ -131,16 +131,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto"> <!-- Alinha os itens de navegação à direita -->
-                <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'cores:cores' %}#projetos">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'cores:cores' %}#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'cores:cores' %}#contato">Contato</a></li>
             </ul>
         </div>
-    </nav>
-    
-    
-
+    </div>
+</nav>
     {% block body %} {% endblock body %}
 
     {% include 'cores/footer.html' with contato_email='viralatagrafite@gmail.com' only %}
