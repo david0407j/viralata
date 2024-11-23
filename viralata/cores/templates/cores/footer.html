@@ -6,235 +6,164 @@
     <title>Vira Lata Intervenções Artísticas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-    /* Estilos gerais */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #111; /* Fundo escuro para todo o site */
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
-#contato {
-    background-color: hsla(0, 0%, 10%, 0.9); /* Fundo escuro com leve transparência */
-    padding: 60px 0;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+        .footer {
+            background-color: #111;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.section-title {
-    font-size: 2.5rem;
-    color: hsl(18, 50%, 96%); /* Laranja */
-    font-weight: bold;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+        .footer h2 {
+            color: #FF4500;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
 
-.contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+        .footer .contact-info {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
 
-.contact-info li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    width: 100%;
-}
+        .footer .contact-info li {
+            margin-bottom: 15px;
+        }
 
-.contact-info li strong {
-    display: block;
-    color: #FF4500; /* Laranja */
-    font-weight: bold;
-    font-size: 1.3rem;
-}
+        .footer .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .footer .contact-info a:hover {
+            color: #FF4500;
+        }
 
-.contact-info a:hover {
-    color: #FF4500;
-}
+        .footer form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-/* Estilo do formulário */
-form {
-    background-color: #222; /* Fundo mais escuro para o formulário */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .footer form input, .footer form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+        }
 
-form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #555;
-    background-color: #444;
-    color: #fff;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
+        .footer form input:focus, .footer form textarea:focus {
+            border-color: #FF4500;
+            outline: none;
+        }
 
-form input:focus, form textarea:focus {
-    border-color: #FF4500;
-    outline: none;
-}
+        .footer form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
 
-form button {
-    width: 100%;
-    padding: 14px;
-    background-color: #FF4500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        .footer form button:hover {
+            background-color: #e03e00;
+        }
 
-form button:hover {
-    background-color: #e03e00;
-}
+        .social-icons {
+            margin-top: 20px;
+        }
 
-/* Estilo do rodapé */
-.footer {
-    background-color: #111; /* Fundo preto para o rodapé */
-    color: #fff;
-    padding: 40px 0;
-    text-align: center;
-    border-top: 1px solid hwb(0 20% 80% / 0);
-}
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
 
-.footer p {
-    margin: 0;
-    font-size: 1rem;
-}
+        .social-icons a:hover {
+            color: #FF4500;
+        }
 
-/* Estilo dos ícones sociais */
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons a {
-    color: #fff;
-    font-size: 1.8rem;
-    margin: 0 15px;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: hsl(30, 7%, 95%);
-    transform: scale(1.1);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .contact-info li {
-        font-size: 1rem;
-        width: 100%;
-    }
-
-    form {
-        width: 80%;
-    }
-}
-a i {
-    color: #f52404; /* Cor verde característica do WhatsApp */
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
-    font-size: 1.2rem; /* Ajusta o tamanho do ícone */
-}
-
-a:hover i {
-    color: hsl(30, 96%, 47%); /* Cor um pouco mais escura ao passar o mouse */
-}
-
-
+        @media (max-width: 768px) {
+            .footer form {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Seção Contato -->
-    <section id="contato" class="container my-5">
-        <h2 class="section-title">Contato</h2>
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <p>Para entrar em contato conosco, utilize os seguintes meios:</p>
-                <ul class="contact-info" aria-label="Informações de Contato">
-                    <li>
-                        <strong>Email:</strong> 
-                        <a href="mailto:{{ contato_email }}" class="text-light">{{ contato_email }}</a>
-                    </li>
-                    <li>
-                        <strong>Telefone:
-                            +55 3198636-5346
-                        </strong> 
-                        <a href="https://wa.me/5531986365346" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
-                        </a>
-                        
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <footer class="footer">
+        <h2>Contato</h2>
+        <ul class="contact-info">
+            <li><strong>Email:</strong> <a href="mailto:{{ contato_email }}">{{ contato_email }}</a></li>
+            <li><strong>Telefone:</strong> +55 31 98636-5346</li>
+            <li>
+                <a href="https://wa.me/5531986365346" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+                </a>
+                <div class="container my-5 text-center" style="color: #FFFFFF;">
+                    <h3>Localização</h3>
+                    <ul class="list-unstyled">
+                        <li><strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil</li>
+                    </ul>
+                    
+                    <!-- Mapa do Google -->
+                    <div class="mt-4">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.021154113218!2d-44.05631298458824!3d-19.944731286593557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690fb614aa06f%3A0xabf6db2422b2c2c7!2sRua%20Moat%C3%A3%2C%20668%20-%20Novo%20Eldorado%2C%20Contagem%20-%20MG%2C%2032380-080!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
+                            width="80%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+        <!-- Formulário de Contato -->
+        <form id="whatsappForm" onsubmit="sendMessage(event)">
+            <input type="text" id="name" name="name" placeholder="Nome" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
 
-
-                    </li>
-                    <li>
-                        <strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil
-                    </li>
-                </ul>
-
-                <!-- Formulário de Mensagem -->
-                <form id="whatsappForm" onsubmit="sendMessage(event)">
-                    <input type="text" id="name" name="name" placeholder="Nome" required>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required>
-                    <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://br.linkedin.com/in/rafasaber/es" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/5531986365346" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </section>
-
-    <footer class="footer text-center">
-        <div class="container">
-            <p>&copy; Vira Lata Intervenções Artísticas 2024. Todos os direitos reservados. Desenvolvido com paixão.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://br.linkedin.com/in/rafasaber/es" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/5531986365346" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
+        <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
     </footer>
 
     <script>
         function sendMessage(event) {
-            event.preventDefault(); // Evita o envio normal do formulário
-
-            // Pega os dados do formulário
+            event.preventDefault();
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
-
-            // Construa o texto da mensagem para o WhatsApp
             var textoMensagem = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
-
-            // Cria o link para o WhatsApp
             var whatsappLink = `https://wa.me/5531986365346?text=${textoMensagem}`;
-
-            // Redireciona para o WhatsApp
             window.open(whatsappLink, '_blank');
         }
     </script>
