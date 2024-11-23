@@ -16,21 +16,42 @@
         }
         body {
             background-color: #000000;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Arial', Helvetica, sans-serif;
+            color: #f5f0eb;
+            line-height: 1.6;
         }
         header {
-            height: 200px; 
+            height: 200px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 50px; 
-            padding-bottom: 30px; 
+            margin-top: 50px;
+            padding-bottom: 30px;
         }
         header h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    color: #f5f0eb;
-}
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            color: #f5f0eb;
+        }
+        .productions-section {
+            margin: 30px 10vw;
+        }
+        .productions-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #FF4500;
+            margin-bottom: 20px;
+        }
+        .productions-lead, .productions-subtitle {
+            font-size: 1.2rem;
+            color: #d3d3d3;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .productions-lead {
+            margin-bottom: 30px;
+        }
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
@@ -45,6 +66,7 @@
             flex-grow: 1;
             transition: transform .5s linear;
             text-align: center;
+            margin-bottom: 20px;
         }
         .gallery-items img {
             width: 100%;
@@ -55,8 +77,8 @@
             transform: scale(1.1);
         }
         .gallery-items h2 {
-            font-size: 1.2rem;
-            margin: 10px 0 5px;
+            font-size: 1.4rem;
+            margin: 10px 0;
             color: #f5f0eb;
         }
         .gallery-items p {
@@ -104,8 +126,39 @@
 </head>
 <body>
     <header>
-        <h1>Editais cultura</h1>
+        <h1>Editais Cultura</h1>
     </header>
+    <div class="container text-center my-5" style="color: #FFFFFF;">
+        <div class="productions-section">
+            <h2 class="productions-title" style="font-weight: bold; color: #FF4500; font-size: 2.5rem;">Vira Lata Produções Culturais e Artísticas: Impacto através de Editais Culturais</h2>
+            
+            <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+                A Vira Lata Produções Culturais e Artísticas vem consolidando sua atuação como uma produtora inovadora e comprometida com a promoção da arte e da cultura em Minas Gerais. Através da participação em diversos editais culturais, a produtora tem viabilizado projetos de grande relevância social e artística, alcançando um público diversificado e contribuindo para o fortalecimento do setor cultural.
+            </p>
+        
+            <h3 class="productions-subtitle" style="font-weight: bold; color: #FF4500; font-size: 2rem;">Editais Municipais e Projetos em Contagem e Belo Horizonte</h3>
+            <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+                Entre os editais municipais, a Vira Lata destaca-se pela aprovação em iniciativas promovidas pela Secretaria Municipal de Cultura de Contagem, como o Projeto Muraliza Arte Pública, que já revitalizou espaços urbanos e promoveu oficinas em escolas e CRAS da cidade. A produtora também tem presença significativa em Belo Horizonte, onde realiza ações em parceria com a Secretaria Municipal de Cultura, fortalecendo a integração regional por meio de projetos artísticos.
+            </p>
+        
+            <h3 class="productions-subtitle" style="font-weight: bold; color: #FF4500; font-size: 2rem;">Premiações Estaduais e a Lei Paulo Gustavo</h3>
+            <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+                Em âmbito estadual, a produtora foi contemplada por premiações da Lei Paulo Gustavo, destinadas ao fomento de ações culturais e artísticas em Minas Gerais. Esses projetos têm permitido a expansão de iniciativas como exposições de artes visuais, oficinas formativas e eventos voltados para a cultura urbana e hip hop.
+            </p>
+        
+            <h3 class="productions-subtitle" style="font-weight: bold; color: #FF4500; font-size: 2rem;">Projetos Nacionais e a Lei de Incentivo à Cultura (Rouanet)</h3>
+            <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+                No cenário nacional, a Vira Lata tem aprovado projetos pela Lei de Incentivo à Cultura (Rouanet), reafirmando seu compromisso com a valorização das expressões artísticas e culturais brasileiras. Entre as iniciativas realizadas, destacam-se exposições itinerantes e formações artísticas que atingiram um público ainda maior, promovendo acesso à cultura e o fortalecimento das economias criativas.
+            </p>
+        
+            <h3 class="productions-subtitle" style="font-weight: bold; color: #FF4500; font-size: 2rem;">Impacto Cultural e Social</h3>
+            <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+                Com uma trajetória marcada pela pluralidade de ações e pela eficiência na gestão cultural, a Vira Lata Produções demonstra como editais culturais podem ser ferramentas transformadoras para a sociedade. A produtora segue comprometida com a ampliação de horizontes culturais e a democratização do acesso à arte, seja através da requalificação de espaços públicos, capacitação de artistas ou realização de eventos que enaltecem a riqueza cultural de Minas Gerais e do Brasil.
+            </p>
+        </div>
+    </div>
+    
+    
     <main>
         <div class="gallery-container">
             {% for foto in fotos %}
@@ -154,6 +207,4 @@
     </script>
 </body>
 </html>
-
 {% endblock body %}
-

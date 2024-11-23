@@ -20,6 +20,10 @@
             padding: 60px 20px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            justify-items: center;
         }
 
         .footer h2 {
@@ -28,23 +32,24 @@
             margin-bottom: 20px;
         }
 
-        .footer .contact-info {
+        .contact-info {
             list-style: none;
             padding: 0;
             margin-bottom: 30px;
             font-size: 1rem;
+            text-align: center;
         }
 
-        .footer .contact-info li {
+        .contact-info li {
             margin-bottom: 15px;
         }
 
-        .footer .contact-info a {
+        .contact-info a {
             color: #fff;
             text-decoration: none;
         }
 
-        .footer .contact-info a:hover {
+        .contact-info a:hover {
             color: #FF4500;
         }
 
@@ -55,11 +60,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             max-width: 500px;
             margin: 0 auto;
+            width: 100%;
         }
 
-        .footer form input, .footer form textarea {
+        .footer form input,
+        .footer form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
             border: 1px solid #555;
             border-radius: 5px;
@@ -67,7 +74,8 @@
             color: #fff;
         }
 
-        .footer form input:focus, .footer form textarea:focus {
+        .footer form input:focus,
+        .footer form textarea:focus {
             border-color: #FF4500;
             outline: none;
         }
@@ -88,13 +96,15 @@
         }
 
         .social-icons {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
         }
 
         .social-icons a {
             color: #fff;
-            font-size: 1.5rem;
-            margin: 0 10px;
+            font-size: 1.8rem;
+            margin: 0 15px;
             text-decoration: none;
         }
 
@@ -102,9 +112,38 @@
             color: #FF4500;
         }
 
+        /* Responsividade */
         @media (max-width: 768px) {
+            .footer {
+                grid-template-columns: 1fr;
+            }
+
             .footer form {
                 width: 90%;
+            }
+
+            .social-icons a {
+                font-size: 1.5rem;
+                margin: 0 8px;
+            }
+
+            .footer h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-info li {
+                font-size: 0.9rem;
+            }
+
+            .footer form input,
+            .footer form textarea {
+                font-size: 0.9rem;
+            }
+
+            .footer form button {
+                font-size: 1rem;
             }
         }
     </style>
@@ -112,47 +151,90 @@
 <body>
     <footer class="footer">
         <h2>Contato</h2>
+
         <ul class="contact-info">
-            <li><strong>Email:</strong> <a href="mailto:{{ contato_email }}">{{ contato_email }}</a></li>
-            <li><strong>Telefone:</strong> +55 31 98636-5346</li>
             <li>
-                <a href="https://wa.me/5531986365346" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+                <i class="fas fa-envelope"></i> 
+                <strong>Email:</strong> <a href="mailto:{{ contato_email }}">{{ contato_email }}</a>
+            </li>
+            <li>
+                <i class="fas fa-phone-alt"></i> 
+                <strong>Telefone:</strong> +55 31 98636-5346
+            </li>
+            <li>
+                <i class="fab fa-whatsapp"></i> 
+                <a href="https://wa.me/5531986365346" target="_blank" aria-label="Entrar em contato via WhatsApp">
+                    Fale Conosco no WhatsApp
                 </a>
-                <div class="container my-5 text-center" style="color: #FFFFFF;">
-                    <h3>Localização</h3>
-                    <ul class="list-unstyled">
-                        <li><strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil</li>
-                    </ul>
-                    
-                    <!-- Mapa do Google -->
-                    <div class="mt-4">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.021154113218!2d-44.05631298458824!3d-19.944731286593557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690fb614aa06f%3A0xabf6db2422b2c2c7!2sRua%20Moat%C3%A3%2C%20668%20-%20Novo%20Eldorado%2C%20Contagem%20-%20MG%2C%2032380-080!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
-                            width="80%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-                
+            </li>
+            <li>
+                <i class="fas fa-clock"></i> 
+                <strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 18h
+            </li>
+        </ul>
+        
+
+        <div class="container my-5 text-center">
+            <h3>Localização</h3>
+            <ul class="list-unstyled">
+                <li><strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil</li>
+            </ul>
+
+            <div class="mt-4">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.021154113218!2d-44.05631298458824!3d-19.944731286593557!2m3!1f0!
+                 2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690fb614aa06f%3A0xabf6db2422b2c2c7!2sRua%20Moat%C3%A3%2C%20668%20
+                -%20Novo%20Eldorado%2C%20Contagem%20-%20MG%2C%2032380-080!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
+                    width="80%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
         <!-- Formulário de Contato -->
         <form id="whatsappForm" onsubmit="sendMessage(event)">
-            <input type="text" id="name" name="name" placeholder="Nome" required>
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
-            <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
+            <h2>Entre em Contato</h2>
+            <p>Preencha o formulário abaixo para enviar sua mensagem diretamente para o WhatsApp.</p>
+            
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+        
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="(xx) xxxxx-xxxx" required>
+        
+            <label for="subject">Assunto:</label>
+            <select id="subject" name="subject" required>
+                <option value="" disabled selected>Selecione um assunto</option>
+                <option value="orcamento">Solicitar Orçamento</option>
+                <option value="informacoes">Informações Gerais</option>
+                <option value="parceria">Parcerias</option>
+                <option value="outro">Outro</option>
+            </select>
+        
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
+        
+            <div class="privacy-policy">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy">Eu concordo com a <a href="/politica-privacidade" target="_blank">Política de Privacidade</a>.</label>
+            </div>
+        
+            <button type="submit">Enviar Mensagem</button>
         </form>
-
         <div class="social-icons">
             <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://br.linkedin.com/in/rafasaber/es" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://wa.me/5531986365346" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
+
         <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
     </footer>
 
