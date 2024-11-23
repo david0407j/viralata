@@ -6,94 +6,166 @@
     <title>Vira Lata Intervenções Artísticas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        #contato {
-            background-color: #000000; 
-            color: #FFFFFF; 
-            padding: 40px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: hsl(15, 23%, 90%); 
-            text-align: center;
-            font-weight: bold;
-        }
-
-        #contato p {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        #contato ul {
-            list-style: none;
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
             padding: 0;
-            text-align: center;
-        }
-
-        #contato li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        #contato li strong {
-            display: block;
-            font-weight: bold;
-            color: #FF4500; 
         }
 
         .footer {
-            background-color: #000000; 
-            color: #FFFFFF;
-            padding: 20px 0;
-            border-top: 1px solid #333333; 
+            background-color: #111;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .footer p {
-            margin: 0;
+        .footer h2 {
+            color: #FF4500;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer .contact-info {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .footer .contact-info li {
+            margin-bottom: 15px;
+        }
+
+        .footer .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer .contact-info a:hover {
+            color: #FF4500;
+        }
+
+        .footer form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .footer form input, .footer form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+        }
+
+        .footer form input:focus, .footer form textarea:focus {
+            border-color: #FF4500;
+            outline: none;
+        }
+
+        .footer form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .footer form button:hover {
+            background-color: #e03e00;
         }
 
         .social-icons {
-            text-align: center;
             margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #FF4500;
+        }
+
+        @media (max-width: 768px) {
+            .footer form {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
-    <section id="contato" class="container my-5">
-        <h2 class="section-title">Contato</h2>
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <p>Para entrar em contato conosco, utilize os seguintes meios:</p>
-                <ul class="contact-info" aria-label="Informações de Contato">
-                    <li>
-                        <strong>Email:</strong> 
-                        <a href="mailto:{{ contato_email }}" class="text-light">{{ contato_email }}</a>
-                    </li>
-                    <li>
-                        <strong>Telefone:</strong> +55 31 98636-5346
-                    </li>
-                    <li>
-                        <strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <footer class="footer">
+        <h2>Contato</h2>
+        <ul class="contact-info">
+            <li><strong>Email:</strong> <a href="mailto:{{ contato_email }}">{{ contato_email }}</a></li>
+            <li><strong>Telefone:</strong> +55 31 98636-5346</li>
+            <li>
+                <a href="https://wa.me/5531986365346" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+                </a>
+                <div class="container my-5 text-center" style="color: #FFFFFF;">
+                    <h3>Localização</h3>
+                    <ul class="list-unstyled">
+                        <li><strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil</li>
+                    </ul>
+                    
+                    <!-- Mapa do Google -->
+                    <div class="mt-4">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.021154113218!2d-44.05631298458824!3d-19.944731286593557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690fb614aa06f%3A0xabf6db2422b2c2c7!2sRua%20Moat%C3%A3%2C%20668%20-%20Novo%20Eldorado%2C%20Contagem%20-%20MG%2C%2032380-080!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
+                            width="80%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+        <!-- Formulário de Contato -->
+        <form id="whatsappForm" onsubmit="sendMessage(event)">
+            <input type="text" id="name" name="name" placeholder="Nome" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
 
-    <footer class="footer text-center">
-        <div class="container">
-            <p>&copy; Vira Lata Intervenções Artísticas 2024. Todos os direitos reservados.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://br.linkedin.com/in/rafasaber" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://br.linkedin.com/in/rafasaber/es" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/5531986365346" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
+        <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function sendMessage(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var textoMensagem = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
+            var whatsappLink = `https://wa.me/5531986365346?text=${textoMensagem}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
 </body>
 </html>

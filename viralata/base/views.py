@@ -54,3 +54,17 @@ def galeria_cultura(request, slug):
         template_name,
         {"fotos": fotos, "projetos": projetos, "titulo": titulo, "projeto": projeto},
     )
+
+
+def galeria_editais(request, slug):
+    projeto = get_object_or_404(Projeto, slug=slug)
+    titulo = f"Projeto: {projeto.nome}"
+    template_name = "base/editais.html"
+    fotos = Foto.objects.filter(projeto=projeto)
+    projetos = Projeto.objects.all()
+
+    return render(
+        request,
+        template_name,
+        {"fotos": fotos, "projetos": projetos, "titulo": titulo, "projeto": projeto},
+    )
