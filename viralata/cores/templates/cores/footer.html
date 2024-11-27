@@ -6,149 +6,165 @@
     <title>Vira Lata Intervenções Artísticas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #111;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
+     body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
 
-        .footer {
-            background-color: #111;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            justify-items: center;
-        }
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+}
 
-        .footer h2 {
-            color: #FF4500;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+.footer h2 {
+    color: #FF4500;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
-        .contact-info {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 30px;
-            font-size: 1rem;
-            text-align: center;
-        }
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    text-align: center;
+}
 
-        .contact-info li {
-            margin-bottom: 15px;
-        }
+.contact-info li {
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
 
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-        }
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .contact-info a:hover {
-            color: #FF4500;
-        }
+.contact-info a:hover {
+    color: #FF4500;
+}
 
-        .footer form {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            margin: 0 auto;
-            width: 100%;
-        }
+.footer form {
+    background-color: #222;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    transition: all 0.3s ease;
+}
 
-        .footer form input,
-        .footer form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #555;
-            border-radius: 5px;
-            background-color: #444;
-            color: #fff;
-        }
+.footer form input,
+.footer form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
 
-        .footer form input:focus,
-        .footer form textarea:focus {
-            border-color: #FF4500;
-            outline: none;
-        }
+.footer form input:focus,
+.footer form textarea:focus {
+    border-color: #FF4500;
+    outline: none;
+}
 
-        .footer form button {
-            width: 100%;
-            padding: 12px;
-            background-color: #FF4500;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
+.footer form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #FF4500;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-        .footer form button:hover {
-            background-color: #e03e00;
-        }
+.footer form button:hover {
+    background-color: #e03e00;
+    transform: scale(1.05);
+}
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+.footer form button:active {
+    transform: scale(0.98);
+}
 
-        .social-icons a {
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-        .social-icons a:hover {
-            color: #FF4500;
-        }
+.social-icons a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .footer {
-                grid-template-columns: 1fr;
-            }
+.social-icons a:hover {
+    color: #FF4500;
+}
 
-            .footer form {
-                width: 90%;
-            }
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
 
-            .social-icons a {
-                font-size: 1.5rem;
-                margin: 0 8px;
-            }
+    .footer form {
+        width: 90%;
+    }
 
-            .footer h2 {
-                font-size: 1.8rem;
-            }
-        }
+    .social-icons a {
+        font-size: 1.6rem;
+        margin: 0 12px;
+    }
 
-        @media (max-width: 480px) {
-            .contact-info li {
-                font-size: 0.9rem;
-            }
+    .footer h2 {
+        font-size: 1.8rem;
+    }
+}
 
-            .footer form input,
-            .footer form textarea {
-                font-size: 0.9rem;
-            }
+@media (max-width: 480px) {
+    .contact-info li {
+        font-size: 0.9rem;
+    }
 
-            .footer form button {
-                font-size: 1rem;
-            }
-        }
+    .footer form input,
+    .footer form textarea {
+        font-size: 0.9rem;
+    }
+
+    .footer form button {
+        font-size: 1rem;
+    }
+}
+
     </style>
 </head>
 <body>
+    
     <footer class="footer">
         <h2>Contato</h2>
 
@@ -179,6 +195,7 @@
             <ul class="list-unstyled">
                 <li><strong>Endereço:</strong> Rua Moatã, 668, Novo Eldorado, Contagem - MG, Brasil</li>
             </ul>
+            
 
             <div class="mt-4">
                 <iframe 
@@ -195,59 +212,70 @@
             </div>
         </div>
 
-        <!-- Formulário de Contato -->
-        <form id="whatsappForm" onsubmit="sendMessage(event)">
+        <section id="contato">
+            <!-- Formulário de Contato -->
             <h2>Entre em Contato</h2>
             <p>Preencha o formulário abaixo para enviar sua mensagem diretamente para o WhatsApp.</p>
             
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+            <!-- Formulário de Contato -->
+            <form id="whatsappForm" onsubmit="sendMessage(event)">
+                
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome completo" autocomplete="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="email" required>
+                
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="(xx) xxxxx-xxxx" autocomplete="tel" required>
+                
+                <label for="subject">Assunto:</label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Selecione um assunto</option>
+                    <option value="Solicitar Orçamento">Solicitar Orçamento</option>
+                    <option value="Informações Gerais">Informações Gerais</option>
+                    <option value="Parcerias">Parcerias</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
+                
+                <div class="privacy-policy">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">Eu concordo com a <a href="/politica-privacidade" target="_blank">Política de Privacidade</a>.</label>
+                </div>
+                
+                <button type="submit">Enviar Mensagem</button>
+            </form>
         
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-        
-            <label for="phone">Telefone:</label>
-            <input type="tel" id="phone" name="phone" placeholder="(xx) xxxxx-xxxx" required>
-        
-            <label for="subject">Assunto:</label>
-            <select id="subject" name="subject" required>
-                <option value="" disabled selected>Selecione um assunto</option>
-                <option value="orcamento">Solicitar Orçamento</option>
-                <option value="informacoes">Informações Gerais</option>
-                <option value="parceria">Parcerias</option>
-                <option value="outro">Outro</option>
-            </select>
-        
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
-        
-            <div class="privacy-policy">
-                <input type="checkbox" id="privacy" name="privacy" required>
-                <label for="privacy">Eu concordo com a <a href="/politica-privacidade" target="_blank">Política de Privacidade</a>.</label>
+            <!-- Ícones de Redes Sociais -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://br.linkedin.com/in/rafasaber/es" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/5531986365346" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/VIRALATAProdutora/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/vira_lata_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://br.linkedin.com/in/rafasaber/es" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/5531986365346" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-
-        <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        function sendMessage(event) {
-            event.preventDefault();
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-            var textoMensagem = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
-            var whatsappLink = `https://wa.me/5531986365346?text=${textoMensagem}`;
-            window.open(whatsappLink, '_blank');
-        }
-    </script>
-</body>
+            <p>&copy; 2024 Vira Lata Intervenções Artísticas. Todos os direitos reservados.</p>
+        </section>
+        
+        <script>
+            function sendMessage(event) {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+        
+                const message = `
+                    Nome: ${formData.get('name')}
+                    E-mail: ${formData.get('email')}
+                    Telefone: ${formData.get('phone')}
+                    Assunto: ${formData.get('subject')}
+                    Mensagem: ${formData.get('message')}
+                `;
+        
+                const whatsappURL = `https://wa.me/5531986365346?text=${encodeURIComponent(message)}`;
+                window.open(whatsappURL, '_blank');
+            }
+        </script>
+        
 </html>

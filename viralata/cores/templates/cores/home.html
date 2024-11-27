@@ -17,12 +17,27 @@
 </section>
 <section>
     <div class="container text-center" style="z-index: 2; color: hwb(0 94% 1%); text-align: center;">
-        <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; animation: fadeInUp 1s ease-out;">Transformando Espaços Urbanos</h1>
-        <p style="font-size: 2.5em; animation: fadeInUp 1.2s ease-out;">Intervenções artísticas que inspiram e conectam comunidades.</p>
+        <!-- Importando a fonte Stencilla -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap'); /* Alternativa próxima */
+        </style>
+        
+        <!-- Título principal com fonte Stencilla -->
+        <h1 style="font-size: 3em; font-weight: bold; margin-bottom: 40px; margin-top: 20px; font-family: 'Staatliches', sans-serif; text-transform: uppercase; letter-spacing: 3px; animation: fadeInUp 1s ease-out;">
+            Transformando Espaços Urbanos
+        </h1>
+        
+        <!-- Subtítulo com tipografia stencil-like -->
+<p style="font-size: 2.5em; font-family: 'Staatliches', sans-serif; animation: fadeInUp 1.2s ease-out;">
+    Intervenções artísticas que inspiram e conectam comunidades.
+</p>
+
+        <!-- Imagem central -->
         <div class="mt-4" style="animation: fadeInUp 1.6s ease-out;">
             <img src="{% static 'img/xereu.icon.ico' %}" class="rounded mx-auto d-block" alt="Rafael" style="max-width: 300px;">
         </div>
     </div>
+    
 </section>
 <link href="https://fonts.googleapis.com/css2?family=København+Sans+Stencil:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -67,6 +82,7 @@ body {
         font-size: 18px;
         color: #ffffff;
         line-height: 1.5;
+    
     }
 
     /* Estilos adicionais para os cartões */
@@ -100,109 +116,131 @@ body {
     }
 </style>
 <section id="projetos" class="container my-5">
-    <h2 class="section-title text-center">PROJETOS CULTURAIS</h2>
+    <!-- Importando a fonte stencil-like -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+    </style>
+    
+    <!-- Título com fonte stencil-like -->
+    <h2 class="section-title text-center" style="font-family: 'Staatliches', sans-serif; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px;">
+        PROJETOS CULTURAIS
+    </h2>
+    <!-- Grid de projetos -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
-
-        <!-- Card 1 -->
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/lua.jpg' %}" class="card-img-top" alt="Editais Culturais">
-                <div class="card-body text-center">
-                    <h3 class="category-title">EDITAIS CULTURAIS</h3>
-                    <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:editais' slug='editais' %}">SABER +</a>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+    
+            .section-title {
+                font-family: 'Staatliches', sans-serif;
+                font-size: 2.5em;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+    
+            .category-title {
+                font-family: 'Staatliches', sans-serif;
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{% static 'img/jane.jpg' %}" class="card-img-top" alt="Editais Culturais">
+                        <div class="card-body text-center">
+                            <h3 class="category-title">EDITAIS CULTURAIS</h3>
+                            <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:editais' slug='editais' %}">SABER +</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{% static 'img/leo 2.jpeg' %}" class="card-img-top" alt="Intervenção Artística">
+                        <div class="card-body text-center">
+                            <h3 class="category-title">INTERVENÇÃO ARTÍSTICA</h3>
+                            <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:galeria' %}">SABER +</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{% static 'img/amigos.jpg' %}" class="card-img-top" alt="Minha Escola Colorida">
+                        <div class="card-body text-center">
+                            <h3 class="category-title">MINHA ESCOLA COLORIDA</h3>
+                            <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:arte' slug='Album' %}">SABER +</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{% static 'img/tmj.jpg' %}" class="card-img-top" alt="Exposições">
+                        <div class="card-body text-center">
+                            <h3 class="category-title">EXPOSIÇÕES</h3>
+                            <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:projeto' slug='projetos' %}">SABER +</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 5 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{% static 'img/ceu.jpg' %}" class="card-img-top" alt="Festival Muraliza">
+                        <div class="card-body text-center">
+                            <h3 class="category-title">FESTIVAL MURALIZA</h3>
+                            <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:cultura' slug='cultura' %}">SABER +</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/leo 2.jpeg' %}" class="card-img-top" alt="Intervenção Artística">
-                <div class="card-body text-center">
-                    <h3 class="category-title">INTERVENÇÃO ARTÍSTICA</h3>
-                    <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:galeria' %}">SABER +</a>
+        </section>
+    
+        <!-- Galeria Section -->
+        <section id="galeria" class="container my-5">
+            <h2 class="section-title text-center">Galeria</h2>
+            <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/amigos.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Amigos">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/oi.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Io">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/RAFA-2.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 10C">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/2 pb-31.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 19">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/RAFA-9.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 13">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/viaduto contagem-46(1).jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Viaduto Contagem">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/leo 2.jpeg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Deus">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/deus.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Deus">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/amigos.jpg' %}" class="card-img-top" alt="Minha Escola Colorida">
-                <div class="card-body text-center">
-                    <h3 class="category-title">MINHA ESCOLA COLORIDA</h3>
-                    <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:arte' slug='Album' %}">SABER +</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/tmj.jpg' %}" class="card-img-top" alt="Exposições">
-                <div class="card-body text-center">
-                    <h3 class="category-title">EXPOSIÇÕES</h3>
-                    <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:projeto' slug='projetos' %}">SABER +</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="col">
-            <div class="card h-100">
-                <img src="{% static 'img/ceu.jpg' %}" class="card-img-top" alt="Festival Muraliza">
-                <div class="card-body text-center">
-                    <h3 class="category-title">FESTIVAL MURALIZA</h3>
-                    <a class="btn btn-primary btn-sm mt-2" href="{% url 'base:cultura' slug='cultura' %}">SABER +</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- Galeria Section -->
-<section id="galeria" class="container my-5">
-    <h2 class="section-title text-center">Galeria</h2>
-    <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'img/amigos.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Amigos">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/oi.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Io">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/RAFA-2.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 10C">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/2 pb-31.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 19">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/RAFA-9.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Rafa 13">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/viaduto contagem-46(1).jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Viaduto Contagem">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/leo 2.jpeg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Deus">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/deus.jpg' %}" class="d-block w-100 gallery-img rounded" alt="Galeria - Deus">
-            </div>
-            <!-- Adicione mais itens aqui se necessário -->
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</section>
+        </section>
 
 <style>
     /* Estilo adicional para a imagem na galeria */
@@ -225,34 +263,116 @@ body {
         text-transform: uppercase;
         margin-bottom: 30px;
     }
+/* Estilo para o título principal */
+h2.artist-title {
+    font-family: 'Oswald', sans-serif; /* Tipografia moderna */
+    font-size: 2.5rem; /* Tamanho da fonte para telas grandes */
+    font-weight: 700; /* Negrito para maior ênfase */
+    color: #FF4500; /* Cor laranja vibrante */
+    text-align: center; /* Centraliza o título */
+    line-height: 1.4; /* Aumenta o espaçamento entre linhas para maior legibilidade */
+    text-transform: uppercase; /* Letra maiúscula para um estilo mais forte */
+    letter-spacing: 1.5px; /* Aumenta o espaçamento entre letras */
+    margin-bottom: 1.5rem; /* Espaço abaixo do título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil */
+}
+
+/* Estilo para os subtítulos */
+h3.artist-subtitle {
+    font-family: 'Oswald', sans-serif; /* Tipografia consistente com o título */
+    font-size: 1.8rem; /* Tamanho ligeiramente menor para subtítulos */
+    font-weight: 600; /* Menos ênfase que o título */
+    color: #FF4500; /* Mesmo tom de laranja */
+    text-align: center; /* Centraliza os subtítulos */
+    margin-top: 2rem; /* Espaço acima do subtítulo */
+    margin-bottom: 1rem; /* Espaço abaixo do subtítulo */
+    text-transform: uppercase; /* Estilo maiúsculo para uniformidade */
+    letter-spacing: 1px; /* Leve aumento no espaçamento entre letras */
+}
+
+/* Melhorando o estilo do texto em p (parágrafos) */
+p.artist-lead {
+    font-family: 'Roboto', sans-serif; /* Tipografia legível */
+    font-size: 1.1rem; /* Levemente maior que o padrão */
+    color: #FFFFFF; /* Cor branca para contraste */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas para conforto na leitura */
+    text-align: justify; /* Justifica o texto */
+    margin-bottom: 1.2rem; /* Mais espaço entre os parágrafos */
+}
+
+/* Estilos específicos para telas pequenas (dispositivos móveis) */
+@media (max-width: 768px) {
+    h2.artist-title {
+        font-size: 1.8rem; /* Tamanho reduzido para telas pequenas */
+        letter-spacing: 1px; /* Menos espaçamento entre letras em telas pequenas */
+    }
+
+    h3.artist-subtitle {
+        font-size: 1.5rem; /* Subtítulo com tamanho ajustado */
+        letter-spacing: 0.5px; /* Menos espaçamento entre letras */
+    }
+
+    p.artist-lead {
+        font-size: 1rem; /* Reduzir o tamanho do texto para telas menores */
+        margin-bottom: 1rem; /* Menos espaço entre os parágrafos */
+    }
+}
+
+/* Estilos para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    h2.artist-title {
+        font-size: 1.6rem; /* Reduz mais o tamanho para smartphones */
+        letter-spacing: 0.5px; /* Menos espaçamento */
+    }
+
+    h3.artist-subtitle {
+        font-size: 1.3rem; /* Subtítulo menor em smartphones */
+        letter-spacing: 0.3px; /* Menos espaçamento */
+    }
+
+    p.artist-lead {
+        font-size: 0.95rem; /* Menor fonte para facilitar a leitura em telas pequenas */
+        margin-bottom: 0.8rem; /* Menos espaço entre parágrafos */
+    }
+}
+    
 </style>
 
-  <!-- Contato Section -->
+<!-- Contato Section -->
 <div class="container text-center my-5" style="color: #FFFFFF;">
     <img src="{% static 'img/oi.ico' %}" class="rounded mx-auto d-block mb-4" alt="Rafael Bertolacini">
     <div class="artist-section">
-        <h2 class="artist-title">Rafa Saber: Entre o Tradicional e o Contemporâneo, a Arte que Transforma</h2>
+        <h2 class="artist-title" style="font-family: 'Staatliches', sans-serif; font-size: 2.5em; letter-spacing: 2px;">
+            Rafa Saber: Entre o Tradicional e o Contemporâneo, a Arte que Transforma
+        </h2>
         <p class="artist-lead" style="text-align: justify;">
             Rafa Saber, nome artístico de Rafael Bertolacini, é um artista visual que transcende as fronteiras entre o tradicional e o contemporâneo, criando um diálogo singular entre a pintura clássica e as expressões urbanas modernas. Com um olhar sensível e profundo sobre a vida urbana, suas obras exploram temas como identidade, memória e a relação entre o indivíduo e a cidade.
         </p>
         <p class="artist-lead" style="text-align: justify;">
             A fusão de técnicas em seu trabalho, que vai do graffiti nas ruas à pintura em telas, dá origem a narrativas visuais poderosas, capturando a essência das metrópoles e suas histórias não contadas. Cada criação de Rafa Saber é uma imersão nos contrastes e nuances da experiência humana em ambientes urbanos, onde o figurativo e o abstrato se encontram para formar composições dinâmicas, provocativas e impactantes.
         </p>
-        <h3 class="artist-subtitle">Reconhecimento e Premiações</h3>
+        <h3 class="artist-subtitle" style="font-family: 'Staatliches', sans-serif; font-size: 2em; letter-spacing: 1px; text-transform: uppercase;">
+            Reconhecimento e Premiações
+        </h3>
         <p class="artist-lead" style="text-align: justify;">
             Ao longo de sua carreira, Rafa Saber tem conquistado reconhecimento por sua abordagem inovadora e autenticidade artística, participando de exposições no Brasil e no exterior. Sua arte foi premiada em diversos editais culturais, incluindo os promovidos pelas secretarias de cultura de Contagem e Belo Horizonte. Além disso, seu talento foi reconhecido em premiações estaduais pela Lei Paulo Gustavo, destacando-se como um dos grandes nomes da produção cultural mineira.
         </p>
-        <h3 class="artist-subtitle">Gestão Cultural e Impacto Social</h3>
+        <h3 class="artist-subtitle" style="font-family: 'Staatliches', sans-serif; font-size: 2em; letter-spacing: 1px; text-transform: uppercase;">
+            Gestão Cultural e Impacto Social
+        </h3>
         <p class="artist-lead" style="text-align: justify;">
             Rafa Saber também desempenha um papel significativo na gestão cultural. Atualmente, é produtor executivo na Amap (Associação dos Amigos do Museu de Arte da Pampulha), onde contribui para a produção dos renomados Museu de Arte da Pampulha, Museu Casa Kubitschek e Museu Casa do Baile. Sua atuação nessa posição reforça seu compromisso com a preservação e valorização do patrimônio cultural e artístico de Minas Gerais.
         </p>
         <p class="artist-lead" style="text-align: justify;">
             Além de sua produção individual, Rafa é ativo em projetos colaborativos e sociais, utilizando a arte como uma ferramenta de transformação e conexão comunitária. Ele acredita no poder da arte para ressignificar espaços públicos e estimular reflexões profundas sobre as dinâmicas da vida contemporânea.
         </p>
-        <h3 class="artist-subtitle">Conclusão</h3>
+        <h3 class="artist-subtitle" style="font-family: 'Staatliches', sans-serif; font-size: 2em; letter-spacing: 1px; text-transform: uppercase;">
+            Conclusão
+        </h3>
         <p class="artist-lead" style="text-align: justify;">
             Por meio de suas obras e iniciativas, Rafa Saber não apenas embeleza os espaços que ocupa, mas também desafia o público a ver o mundo sob novas perspectivas. Sua arte revela a beleza oculta nas camadas mais inesperadas da experiência urbana, transformando histórias invisíveis em narrativas universais de impacto e emoção.
         </p>
     </div>
-    
+</div>
+
 {% endblock body %}
