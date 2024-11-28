@@ -8,57 +8,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Vira Lata Intervenções Artísticas{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
         body {
             background-color: #000000;
-            font-family: Arial, Helvetica, sans-serif;
+            color: #f5f0eb;
+            font-family: Arial, sans-serif;
         }
-        header {
-            height: 200px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px; 
-            padding-bottom: 30px; 
-        }
+
         header h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    color: #f5f0eb;
-}
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 2vw;
-            padding: 0 2vw;
-        }
-        .gallery-items {
-            width: 340px;
-            border: 10px solid hsla(30, 27%, 94%, 0.972);
-            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
-            flex-grow: 1;
-            transition: transform .5s linear;
+            font-size: 3.5rem;
+            color: #FF4500;
             text-align: center;
+            margin-top: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            font-family: 'Staatliches', sans-serif;
         }
-        .gallery-items img {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-        }
-        .gallery-items:hover {
-            transform: scale(1.1);
-        }
-        .gallery-items h2 {
-            font-size: 1.2rem;
-            margin: 10px 0 5px;
+
+        .description-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 15px auto;
+            padding: 15px;
+            text-align: justify;
             color: #f5f0eb;
         }
+
+        .productions-title, .productions-subtitle {
+            font-weight: bold;
+            color: #FF4500;
+        }
+
+        .productions-title {
+            font-size: 2.5rem;
+        }
+
+        .productions-lead {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.8;
+            color: #d3d3d3;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .gallery-items {
+            text-align: center;
+            border: 10px solid hsla(30, 27%, 94%, 0.972);
+            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
+            transition: transform 0.5s linear;
+        }
+
+        .gallery-items img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-items h2 {
+            font-size: 1.5rem;
+            color: #f5f0eb;
+            margin-top: 10px;
+        }
+
         .gallery-items p {
             font-size: 1rem;
             color: #d3d3d3;
@@ -67,14 +89,7 @@
             font-family: 'Georgia', serif;
             text-align: center;
         }
-        footer {
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(246, 241, 241);
-            font-style: italic;
-        }
+
         .overlay {
             display: none;
             position: fixed;
@@ -86,11 +101,15 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
+
+        .overlay.show {
+            display: flex;
+            opacity: 1;
         }
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -100,60 +119,118 @@
             cursor: pointer;
             z-index: 1001;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+                margin-top: 60px;
+            }
+
+            .productions-title {
+                font-size: 1.5rem;
+            }
+
+            .productions-lead {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .gallery-items img {
+                height: auto;
+                max-height: 250px;
+            }
+
+            .gallery-items h2, .gallery-items p {
+                font-size: 0.9rem;
+            }
+
+            .productions-section {
+                padding: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Editais cultura</h1>
-    </header>
-    <main>
-        <div class="gallery-container">
-            {% for foto in fotos %}
-                <div class="gallery-items">
-                    <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
-                        <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
-                    </a>
-                    <h2>{{ foto.name }}</h2>
-                    <p>{{ foto.description }}</p> 
-                </div>
-            {% endfor %}
+    <div class="container text-center my-5">
+        <div class="productions-section">
+            <header>
+                <h1>EDITAIS CULTURAIS</h1>
+            </header>
+            <h2 class="productions-title">
+                Vira Lata Produções Culturais e Artísticas: Impacto através de Editais Culturais
+            </h2>
+            <p class="productions-lead">
+                A Vira Lata Produções Culturais e Artísticas vem se consolidando como uma produtora inovadora e comprometida 
+                com a promoção da arte e cultura em Minas Gerais. Participando de diversos editais culturais, a produtora viabiliza 
+                projetos de grande relevância social e artística, alcançando públicos diversificados e fortalecendo o setor cultural.
+            </p>
+            <h3 class="productions-subtitle">
+                Editais Municipais e Projetos em Contagem e Belo Horizonte
+            </h3>
+            <p class="productions-lead">
+                Entre os editais municipais, a Vira Lata se destaca em iniciativas da Secretaria Municipal de Cultura de Contagem, 
+                como o Projeto Muraliza Arte Pública, que revitalizou espaços urbanos e promoveu oficinas em escolas e CRAS da cidade. 
+                A produtora também atua em Belo Horizonte, colaborando com a Secretaria Municipal de Cultura para fortalecer a integração 
+                regional por meio de eventos culturais.
+            </p>
+            <h3 class="productions-subtitle">Projetos em Parceria com o Governo de Minas Gerais</h3>
+            <p class="productions-lead">
+                Em parceria com o Governo do Estado de Minas Gerais, a Vira Lata foi selecionada para projetos como o Circuito Cultural 
+                Praça da Liberdade e o projeto de ocupação da Praça do Papa, ampliando o acesso a atividades culturais em comunidades 
+                periféricas.
+            </p>
         </div>
-    </main>
-
-    <!-- Fullscreen overlay -->
-    <div id="fullscreen-overlay" class="overlay">
-        <span id="close-btn" class="close-btn">&times;</span>
-        <img id="fullscreen-image" src="" alt="">
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.getElementById('fullscreen-overlay');
-            const fullscreenImage = document.getElementById('fullscreen-image');
-            const closeBtn = document.getElementById('close-btn');
-
-            document.querySelectorAll('.image-link').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    fullscreenImage.src = this.dataset.imageUrl;
-                    fullscreenImage.alt = this.dataset.imageAlt;
-                    overlay.style.display = 'flex';
+        <main>
+            <div class="gallery-container">
+                {% for foto in fotos %}
+                    <div class="gallery-items">
+                        <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
+                            <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
+                        </a>
+                        <h2>{{ foto.name }}</h2>
+                        <p>{{ foto.description }}</p> 
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    
+        <!-- Fullscreen overlay -->
+        <div id="fullscreen-overlay" class="overlay">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <img id="fullscreen-image" src="" alt="">
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const overlay = document.getElementById('fullscreen-overlay');
+                const fullscreenImage = document.getElementById('fullscreen-image');
+                const closeBtn = document.getElementById('close-btn');
+    
+                document.querySelectorAll('.image-link').forEach(link => {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        fullscreenImage.src = this.dataset.imageUrl;
+                        fullscreenImage.alt = this.dataset.imageAlt;
+                        overlay.style.display = 'flex';
+                    });
+                });
+    
+                closeBtn.addEventListener('click', function() {
+                    overlay.style.display = 'none';
+                });
+    
+                overlay.addEventListener('click', function(event) {
+                    if (event.target === overlay) {
+                        overlay.style.display = 'none';
+                    }
                 });
             });
-
-            closeBtn.addEventListener('click', function() {
-                overlay.style.display = 'none';
-            });
-
-            overlay.addEventListener('click', function(event) {
-                if (event.target === overlay) {
-                    overlay.style.display = 'none';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
-
-{% endblock body %}
-
+        </script>
+    </body>
+    </html>
+{% endblock %}

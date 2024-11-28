@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <style>
-      <style>
         body {
         background-color: #000000;
         color: #f5f0eb;
@@ -115,21 +115,28 @@
             cursor: pointer;
             z-index: 1001;
         }
+        h2, h3 {
+    font-family: 'Staatliches', sans-serif;
+}
+
     </style>
 </head>
 <body>
-    <section class="description-text">
+    <section class="description-text" style="color: #FFFFFF;">
         <header>
-            <h1>Arte colaborativa com comunidades escolares</h1>
+            <h1 style="font-weight: bold; color: #FF4500; font-size: 3rem; font-family: 'Staatliches', sans-serif;">
+                Arte colaborativa com comunidades escolares
+            </h1>
         </header>
-        <p class="lead">
+        <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
             “Minha Escola Colorida” é um projeto de arte urbana que revitaliza escolas através de murais educativos e participativos, promovendo o engajamento de alunos, educadores e a comunidade. O projeto está em sua 5ª edição, e já transformou instituições como Colégio Arnaldo, Escola Municipal Domingos José Diniz Costa Belém, Escola Municipal Rita Carmelinda Rocha, Escola Primária Vida Feliz, Unidade Municipal de Ensino Infantil Vila Esperança, Centro de Referência Social Petrolandia, Centro de Referência Social Eldorado e Centro de Referência Social Nova Contagem.
         </p>
-        <p class="lead">
+        <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
             Enriquecendo o ambiente escolar e incentivando o desenvolvimento crítico e artístico, a ação valoriza o muralismo como expressão contemporânea e fortalece a oferta cultural em sua atuação, revitalizando espaços de ensino com temáticas educacionais, inclusivas e diversificadas.
         </p>
     </section>
-
+    
+    
     <div class="gallery-container">
         {% for foto in fotos %}
             <div class="gallery-items">

@@ -7,35 +7,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <title>Festival Muraliza Arte Pública</title>
     <style>
         body {
-        background-color: #000000;
-        color: #f5f0eb;
-        font-family: Arial, sans-serif;
-    }
+            background-color: #000000;
+            color: #f5f0eb;
+            font-family: Arial, sans-serif;
+        }
 
-    header h1 {
-    font-size: 3.5rem; /* Tamanho ajustado para um visual mais elegante */
-    color: #FF4500;
-    text-align: center;
-    margin-top: 40px;
-    font-weight: 700; /* Aumenta o peso da fonte para melhor destaque */
-    letter-spacing: 1px; /* Adiciona um pequeno espaçamento entre letras */
-    line-height: 1.2; /* Mantém o espaçamento entre linhas ajustado */
-    font-family: 'Roboto', sans-serif; /* Fonte moderna e legível */
-}
+        header h1 {
+            font-family: 'Staatliches', sans-serif;
+            font-weight: bold;
+            color: #FF4500;
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 40px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
 
-    .description-text {
-        font-size: 1rem; /* Tamanho da fonte ajustado */
-        line-height: 1.6;
-        max-width: 90%;
-        margin: 15px auto;
-        padding: 15px;
-        text-align: justify; /* Alinhamento justificado */
-        color: #f5f0eb;
-    }
+        .description-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 15px auto;
+            padding: 15px;
+            text-align: justify;
+            color: #f5f0eb;
+        }
 
         .instagram-container {
             display: flex;
@@ -116,77 +116,85 @@
             z-index: 1001;
         }
     </style>
-    <section class="description-text">
-        <header>
-            <h1>Festival Muraliza Arte Pública</h1>
-        </header>
-        <p class="lead">
-            O Muraliza Arte Pública é um projeto de revitalização urbana que transforma espaços públicos em galerias ao céu aberto por meio da arte urbana.
-        </p> 
-        <p class="lead">Em sua sexta edição, o projeto leva uma nova perspectiva aos locais que já foram intervindos, como Viaduto Complexo Beatriz Contagem,
-        </p>
-        <p class="lead"> Viaduto Teleférico Via Expressa Contagem, Cemitério Nossa Senhora da Glória Contagem, Unidade Básica de Saúde Industrial e Unidade de Pronto Atendimento Industrial.
-        </p>
-        </p>
-        <p class="lead">
-            Nossa missão acontece reunindo renomados artistas de arte urbana para trocas de conhecimentos e para criar murais vibrantes nas fachadas, 
-        </p>
-        <p class="lead"> promovendo o setor cultural e a valorização artística. Realizado pela Vira Lata Produções Artísticas e Culturais,
-        </p>
-        </p>
-        <p class="lead">o evento é liderado pelo artista Rafa Saber, que tem como objetivo promover cultura, inclusão, pertencimento, valorização artística e do patrimônio público.
-        </p>
-    </section>
-    <!-- Link para o Instagram centralizado -->
-    <div class="instagram-container">
-        <a href="https://www.instagram.com/muralizaartepublica/" target="_blank" class="instagram-link">
-            <img src="{% static 'img/davidson.ico' %}" alt="Instagram" class="instagram-icon">
+</head>
+<body>
+
+<section class="description-text" style="color: #FFFFFF;">
+    <header>
+        <h1 style="font-weight: bold; color: #FF4500; font-size: 3rem;">
             Festival Muraliza Arte Pública
-        </a>
-    </div>
-    
-    <div class="gallery-container">
-        {% for foto in fotos %}
-            <div class="gallery-items">
-                <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
-                <h2>{{ foto.name }}</h2>
-                <p>{{ foto.description }}</p>
-            </div>
-        {% endfor %}
-    </div>
-    
-    <!-- Fullscreen overlay -->
-    <div id="fullscreen-overlay" class="overlay">
-        <span id="close-btn" class="close-btn">&times;</span>
-        <img id="fullscreen-image" src="" alt="">
-    </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.getElementById('fullscreen-overlay');
-            const fullscreenImage = document.getElementById('fullscreen-image');
-            const closeBtn = document.getElementById('close-btn');
-    
-            document.querySelectorAll('.gallery-items img').forEach(img => {
-                img.addEventListener('click', function() {
-                    fullscreenImage.src = this.src;
-                    fullscreenImage.alt = this.alt;
-                    overlay.style.display = 'flex';
-                });
-            });
-    
-            closeBtn.addEventListener('click', function() {
-                overlay.style.display = 'none';
-            });
-    
-            overlay.addEventListener('click', function(event) {
-                if (event.target === overlay) {
-                    overlay.style.display = 'none';
-                }
+        </h1>
+    </header>
+    <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+        O Muraliza Arte Pública é um projeto de revitalização urbana que transforma espaços públicos em galerias ao céu aberto por meio da arte urbana.
+    </p>
+    <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+        Em sua sexta edição, o projeto leva uma nova perspectiva aos locais que já foram intervindos, como Viaduto Complexo Beatriz Contagem,
+    </p>
+    <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+        Viaduto Teleférico Via Expressa Contagem, Cemitério Nossa Senhora da Glória Contagem, Unidade Básica de Saúde Industrial e Unidade de Pronto Atendimento Industrial.
+    </p>
+    <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+        Nossa missão acontece reunindo renomados artistas de arte urbana para trocas de conhecimentos e para criar murais vibrantes nas fachadas,
+    </p>
+    <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+        promovendo o setor cultural e a valorização artística. Realizado pela Vira Lata Produções Artísticas e Culturais,
+    </p>
+    <p class="lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+        o evento é liderado pelo artista Rafa Saber, que tem como objetivo promover cultura, inclusão, pertencimento, valorização artística e do patrimônio público.
+    </p>
+</section>
+
+<!-- Link para o Instagram centralizado -->
+<div class="instagram-container">
+    <a href="https://www.instagram.com/muralizaartepublica/" target="_blank" class="instagram-link">
+        <img src="{% static 'img/junio.ico' %}" alt="Instagram" class="instagram-icon">
+        Festival Muraliza Arte Pública
+    </a>
+</div>
+
+<div class="gallery-container">
+    {% for foto in fotos %}
+        <div class="gallery-items">
+            <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
+            <h2>{{ foto.name }}</h2>
+            <p>{{ foto.description }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Fullscreen overlay -->
+<div id="fullscreen-overlay" class="overlay">
+    <span id="close-btn" class="close-btn">&times;</span>
+    <img id="fullscreen-image" src="" alt="">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById('fullscreen-overlay');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+        const closeBtn = document.getElementById('close-btn');
+
+        document.querySelectorAll('.gallery-items img').forEach(img => {
+            img.addEventListener('click', function() {
+                fullscreenImage.src = this.src;
+                fullscreenImage.alt = this.alt;
+                overlay.style.display = 'flex';
             });
         });
-    </script>
-    </body>
-    </html>
-    
+
+        closeBtn.addEventListener('click', function() {
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', function(event) {
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
 {% endblock body %}
