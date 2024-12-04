@@ -7,50 +7,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Vira Lata Intervenções Artísticas{% endblock title %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
     <style>
         body {
             background-color: #000000;
             color: #f5f0eb;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-family: 'Staatliches', sans-serif;
+            font-weight: bold;
             color: #FF4500;
-            text-align: center;
+            font-size: 3rem;
             margin-top: 40px;
-            font-weight: 700;
+            margin-left: 20px;
             letter-spacing: 1px;
             line-height: 1.2;
-            font-family: 'Staatliches', sans-serif;
         }
 
         .description-text {
-            font-size: 1rem;
+            font-size: 1.125rem;
             line-height: 1.6;
-            max-width: 90%;
-            margin: 15px auto;
+            max-width: 900px;
+            margin: 40px auto;
             padding: 15px;
-            text-align: justify;
+            text-align: left;
             color: #f5f0eb;
         }
 
-        .productions-title, .productions-subtitle {
-            font-weight: bold;
+        .description-text h2,
+        .description-text h3 {
             color: #FF4500;
+            font-weight: bold;
         }
 
-        .productions-title {
-            font-size: 2.5rem;
-        }
-
-        .productions-lead {
-            font-size: 1.25rem;
-            font-weight: 600;
+        .description-text ul {
+            font-size: 1.1rem;
             line-height: 1.8;
-            color: #d3d3d3;
+            margin-bottom: 20px;
+        }
+
+        .description-text ul li {
+            margin-bottom: 10px;
         }
 
         .gallery-container {
@@ -58,6 +59,7 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
+            justify-items: center;
         }
 
         .gallery-items {
@@ -69,8 +71,7 @@
 
         .gallery-items img {
             width: 100%;
-            height: auto;
-            max-height: 400px;
+            height: 400px;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -90,6 +91,10 @@
             text-align: center;
         }
 
+        .gallery-items:hover {
+            transform: scale(1.05);
+        }
+
         .overlay {
             display: none;
             position: fixed;
@@ -101,13 +106,6 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .overlay.show {
-            display: flex;
-            opacity: 1;
         }
 
         .close-btn {
@@ -120,73 +118,116 @@
             z-index: 1001;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-                margin-top: 60px;
-            }
+        .overlay.show {
+            display: flex;
+        }
 
-            .productions-title {
-                font-size: 1.5rem;
-            }
-
-            .productions-lead {
-                font-size: 1rem;
-                line-height: 1.5;
-            }
-
-            .gallery-container {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 15px;
-            }
-
-            .gallery-items img {
-                height: auto;
-                max-height: 250px;
-            }
-
-            .gallery-items h2, .gallery-items p {
-                font-size: 0.9rem;
-            }
-
-            .productions-section {
-                padding: 0 10px;
-            }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
-    <div class="container text-center my-5">
-        <div class="productions-section">
+    <div class="container text-center my-5" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;">
+        <div class="productions-section" style="text-align: center;">
             <header>
                 <h1>EDITAIS CULTURAIS</h1>
             </header>
             <h2 class="productions-title">
-                Vira Lata Produções Culturais e Artísticas: Impacto através de Editais Culturais
+                Produção e Inscrição de Projetos Culturais
             </h2>
             <p class="productions-lead">
-                A Vira Lata Produções Culturais e Artísticas vem se consolidando como uma produtora inovadora e comprometida 
-                com a promoção da arte e cultura em Minas Gerais. Participando de diversos editais culturais, a produtora viabiliza 
-                projetos de grande relevância social e artística, alcançando públicos diversificados e fortalecendo o setor cultural.
+                A Vira Lata Produções Culturais e Artísticas oferece um serviço especializado de produção e inscrição de projetos culturais em Leis de Incentivo à Cultura nos âmbitos municipal, estadual e federal. Com ampla experiência no setor, nossa equipe acompanha todas as etapas do processo, desde a concepção da ideia até a formatação, redação e inscrição em editais e programas de incentivo, garantindo que seu projeto atenda aos requisitos técnicos e legais exigidos.
             </p>
             <h3 class="productions-subtitle">
-                Editais Municipais e Projetos em Contagem e Belo Horizonte
+                Nossos Resultados
             </h3>
             <p class="productions-lead">
-                Entre os editais municipais, a Vira Lata se destaca em iniciativas da Secretaria Municipal de Cultura de Contagem, 
-                como o Projeto Muraliza Arte Pública, que revitalizou espaços urbanos e promoveu oficinas em escolas e CRAS da cidade. 
-                A produtora também atua em Belo Horizonte, colaborando com a Secretaria Municipal de Cultura para fortalecer a integração 
-                regional por meio de eventos culturais.
+                Ao longo dos anos, a Vira Lata tem conquistado resultados expressivos:
             </p>
-            <h3 class="productions-subtitle">Projetos em Parceria com o Governo de Minas Gerais</h3>
+            <ul class="productions-lead">
+                <li>Edital Paulo Gustavo – Projetos aprovados e realizados com foco em diversas manifestações artísticas, promovendo inclusão e acessibilidade.</li>
+                <li>Lei Aldir Blanc – Experiência comprovada na execução de projetos culturais voltados para a valorização de artistas locais e fortalecimento da economia criativa.</li>
+                <li>Editais Municipais e Estaduais – Reconhecimento em editais da Secretaria de Cultura de Minas Gerais e prefeituras, como o Edital de Fomento Cultural Secult MG, que garantiram a realização de ações culturais de impacto em diversas comunidades.</li>
+                <li>Premiações Culturais – Nossa trajetória inclui conquistas em editais de destaque, atestando a qualidade e relevância dos projetos que desenvolvemos.</li>
+            </ul>
+            <h3 class="productions-subtitle">
+                O que oferecemos
+            </h3>
+            <ul class="productions-lead">
+                <li>Consultoria Personalizada – Análise estratégica de ideias para adequação às exigências de cada edital.</li>
+                <li>Redação e Formatação – Desenvolvimento de propostas criativas e alinhadas aos critérios técnicos.</li>
+                <li>Gestão Burocrática – Suporte completo com documentação, inscrição e acompanhamento das etapas de seleção.</li>
+                <li>Capacitação de Proponentes – Orientação e treinamento para elaboração de projetos culturais de sucesso.</li>
+            </ul>
             <p class="productions-lead">
-                Em parceria com o Governo do Estado de Minas Gerais, a Vira Lata foi selecionada para projetos como o Circuito Cultural 
-                Praça da Liberdade e o projeto de ocupação da Praça do Papa, ampliando o acesso a atividades culturais em comunidades 
-                periféricas.
+                Combinando criatividade e expertise técnica, a Vira Lata Produções Culturais e Artísticas transforma ideias em ações que impactam e valorizam a cultura local. Trabalhamos para fortalecer o setor cultural, conectar pessoas e proporcionar experiências únicas através da arte e da cultura.
+            </p>
+            <p class="productions-lead">
+                Entre em contato e leve sua ideia ao próximo nível!
             </p>
         </div>
-        <main>
-            <div class="gallery-container">
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0 20px;
+        }
+
+        .productions-section {
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #FF4500; /* Laranja para os títulos */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        p, ul {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-top: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .productions-lead {
+            margin-bottom: 20px;
+        }
+    </style>
+</body>
+ <div class="gallery-container">
                 {% for foto in fotos %}
                     <div class="gallery-items">
                         <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
@@ -198,7 +239,6 @@
                 {% endfor %}
             </div>
         </main>
-    
         <!-- Fullscreen overlay -->
         <div id="fullscreen-overlay" class="overlay">
             <span id="close-btn" class="close-btn">&times;</span>
@@ -216,21 +256,22 @@
                         event.preventDefault();
                         fullscreenImage.src = this.dataset.imageUrl;
                         fullscreenImage.alt = this.dataset.imageAlt;
-                        overlay.style.display = 'flex';
+                        overlay.classList.add('show');
                     });
                 });
     
                 closeBtn.addEventListener('click', function() {
-                    overlay.style.display = 'none';
+                    overlay.classList.remove('show');
                 });
     
                 overlay.addEventListener('click', function(event) {
                     if (event.target === overlay) {
-                        overlay.style.display = 'none';
+                        overlay.classList.remove('show');
                     }
                 });
             });
         </script>
-    </body>
-    </html>
-{% endblock %}
+    </div>
+</body>
+</html>
+{% endblock body %}

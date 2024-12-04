@@ -9,56 +9,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
         body {
             background-color: #000000;
-            font-family: Arial, Helvetica, sans-serif;
+            color: #f5f0eb;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        header {
-            height: 200px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px; 
-            padding-bottom: 30px; 
-        }
+
         header h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    color: #f5f0eb;
-}
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 2vw;
-            padding: 0 2vw;
+            font-family: 'Staatliches', sans-serif;
+            font-weight: bold;
+            color: #FF4500;
+            font-size: 3rem;
+            margin-top: 40px;
+            margin-left: 20px;
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
-        .gallery-items {
-            width: 340px;
-            border: 10px solid hsla(30, 27%, 94%, 0.972);
-            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
-            flex-grow: 1;
-            transition: transform .5s linear;
-            text-align: center;
-        }
-        .gallery-items img {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-        }
-        .gallery-items:hover {
-            transform: scale(1.1);
-        }
-        .gallery-items h2 {
-            font-size: 1.2rem;
-            margin: 10px 0 5px;
+
+        .description-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 15px;
+            text-align: left;
             color: #f5f0eb;
         }
+
+        .description-text h2,
+        .description-text h3 {
+            color: #FF4500;
+            font-weight: bold;
+        }
+
+        .description-text ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .description-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .gallery-items {
+            text-align: center;
+            border: 10px solid hsla(30, 27%, 94%, 0.972);
+            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
+            transition: transform 0.5s linear;
+        }
+
+        .gallery-items img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-items h2 {
+            font-size: 1.5rem;
+            color: #f5f0eb;
+            margin-top: 10px;
+        }
+
         .gallery-items p {
             font-size: 1rem;
             color: #d3d3d3;
@@ -67,14 +90,11 @@
             font-family: 'Georgia', serif;
             text-align: center;
         }
-        footer {
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(246, 241, 241);
-            font-style: italic;
+
+        .gallery-items:hover {
+            transform: scale(1.05);
         }
+
         .overlay {
             display: none;
             position: fixed;
@@ -87,10 +107,7 @@
             align-items: center;
             z-index: 1000;
         }
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -100,12 +117,121 @@
             cursor: pointer;
             z-index: 1001;
         }
+
+        .overlay.show {
+            display: flex;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Exposições em galerias de arte</h1>
-    </header>
+<section class="description-text" style="color: #FFFFFF; display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; font-family: 'Roboto', sans-serif; padding: 20px;">
+    <main style="width: 100%; max-width: 1200px; padding: 20px;">
+        <!-- Título Principal -->
+        <header>
+            <h1 style="font-size: 2.5rem; font-weight: bold; color: #FF4500; margin-bottom: 20px;">Criação e Produção de Exposições Artísticas</h1>
+        </header>
+
+        <!-- Descrição -->
+        <p style="font-size: 1.125rem; line-height: 1.8; color: #FFFFFF; max-width: 900px; margin: 0 auto 30px;">
+            A <strong>Vira Lata Produções Culturais e Artísticas</strong> é especializada na criação e produção de exposições artísticas, oferecendo um serviço completo que vai desde a concepção do projeto até a curadoria, montagem e desmontagem. Trabalhamos com mostras individuais do artista Rafa Saber e também com exposições coletivas, proporcionando experiências imersivas e impactantes para os visitantes.
+        </p>
+
+        <!-- Exposições Individuais -->
+        <section>
+            <h2 style="font-weight: bold; color: #FF4500; font-size: 2rem; margin-bottom: 10px;">Exposições Individuais: Rafa Saber</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 20px;">
+                Com mais de dez anos de trajetória artística, Rafa Saber tem se destacado com exposições de grande relevância. Alguns de seus principais trabalhos incluem:
+            </p>
+            <ul style="color: #FFFFFF; font-size: 1.125rem; line-height: 1.8; list-style: inside;">
+                <li><strong>"No Fundo da Gaveta"</strong> – Exibida no Museu Casa da Cultura Nair Mendes Moreira, em Contagem, e no Museu Mineiro, em Belo Horizonte, esta mostra explora narrativas intimistas e poéticas por meio de uma linguagem visual única.</li>
+                <li><strong>"Fantásticas Aquarelas"</strong> – Exposição de obras surrealistas e ecológicas que consolidam a pesquisa do artista na técnica da aquarela.</li>
+            </ul>
+        </section>
+
+        <!-- Exposições Coletivas -->
+        <section>
+            <h2 style="font-weight: bold; color: #FF4500; font-size: 2rem; margin-bottom: 10px;">Exposições Coletivas e Feiras Comerciais</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 20px;">
+                Além das exposições individuais, a Vira Lata Produções organiza exposições coletivas e feiras comerciais, conectando artistas e colecionadores em galerias renomadas e eventos culturais de grande prestígio. Com curadorias inovadoras e temáticas diversificadas, contribuímos para o fortalecimento das artes visuais e o desenvolvimento da economia criativa local.
+            </p>
+        </section>
+
+        <!-- Experiência e Expertise -->
+        <section>
+            <h2 style="font-weight: bold; color: #FF4500; font-size: 2rem; margin-bottom: 10px;">Experiência e Expertise</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 20px;">
+                A nossa produtora é liderada por Rafael Sá Bertolacini, um experiente produtor executivo que tem uma sólida trajetória no gerenciamento de exposições e eventos culturais. Rafael foi responsável pela produção de exposições no projeto Museus da Pampulha, que inclui importantes instituições como o Museu Casa Kubitschek, o Museu Casa do Baile e o Museu de Arte da Pampulha, sob a gestão do Instituto Lumiar. Sua experiência em montagens e desmontagens de exposições, além da organização de eventos culturais de grande porte, traz uma abordagem técnica e criativa ímpar para a Vira Lata.
+            </p>
+        </section>
+
+        <!-- Diferenciais -->
+        <section>
+            <h2 style="font-weight: bold; color: #FF4500; font-size: 2rem; margin-bottom: 10px;">Nossos Diferenciais</h2>
+            <ul style="color: #FFFFFF; font-size: 1.1rem; line-height: 1.8; list-style: inside;">
+                <li><strong>Criação Personalizada</strong> – Desenvolvemos projetos individuais e coletivos sob medida, alinhados às necessidades artísticas e comerciais de cada cliente.</li>
+                <li><strong>Curadoria Especializada</strong> – Realizamos uma curadoria criteriosa, selecionando obras e temas que se conectam de forma única com o público e o espaço expositivo.</li>
+                <li><strong>Execução Completa</strong> – Cuidamos de todas as etapas do processo, desde o planejamento até a desmontagem, garantindo resultados técnicos e estéticos de alta qualidade.</li>
+                <li><strong>Resultados Reconhecidos</strong> – Nossa experiência em museus, galerias e eventos culturais é um atestado do nosso compromisso com a excelência e o impacto positivo nas artes visuais.</li>
+            </ul>
+        </section>
+
+        <!-- Encerramento -->
+        <section>
+            <p style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #FFFFFF;">
+                Na <strong>Vira Lata Produções Culturais e Artísticas</strong>, transformamos ideias em experiências visuais inesquecíveis. Conectamos artistas, espaços e públicos, criando exposições que fazem a diferença. Entre em contato conosco e descubra como podemos dar vida ao seu projeto expositivo!
+            </p>
+        </section>
+    </main>
+</section>
+
+<style>
+    @media (max-width: 768px) {
+        .description-text main {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        ul {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+    <!-- Galeria de Fotos -->
     <div class="gallery-container">
         {% for foto in fotos %}
             <div class="gallery-items">
@@ -149,5 +275,4 @@
     </script>
 </body>
 </html>
-{% endblock body %}
-
+{% endblock %}
