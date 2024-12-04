@@ -7,58 +7,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Vira Lata Intervenções Artísticas{% endblock title %}</title>
+    <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
         body {
             background-color: #000000;
-            font-family: Arial, Helvetica, sans-serif;
+            color: #f5f0eb;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        header {
-            height: 200px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px; 
-            padding-bottom: 30px; 
-        }
+
         header h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    color: #f5f0eb;
-}
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 2vw;
-            padding: 0 2vw;
+            font-family: 'Staatliches', sans-serif;
+            font-weight: bold;
+            color: #FF4500;
+            font-size: 3rem;
+            margin-top: 40px;
+            margin-left: 20px;
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
-        .gallery-items {
-            width: 340px;
-            border: 10px solid hsla(30, 27%, 94%, 0.972);
-            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
-            flex-grow: 1;
-            transition: transform .5s linear;
-            text-align: center;
-        }
-        .gallery-items img {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-        }
-        .gallery-items:hover {
-            transform: scale(1.1);
-        }
-        .gallery-items h2 {
-            font-size: 1.2rem;
-            margin: 10px 0 5px;
+
+        .description-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 15px;
+            text-align: left;
             color: #f5f0eb;
         }
+
+        .description-text h2,
+        .description-text h3 {
+            color: #FF4500;
+            font-weight: bold;
+        }
+
+        .description-text ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .description-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .gallery-items {
+            text-align: center;
+            border: 10px solid hsla(30, 27%, 94%, 0.972);
+            box-shadow: 5px 5px 5px hsl(28, 99%, 46%);
+            transition: transform 0.5s linear;
+        }
+
+        .gallery-items img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-items h2 {
+            font-size: 1.5rem;
+            color: #f5f0eb;
+            margin-top: 10px;
+        }
+
         .gallery-items p {
             font-size: 1rem;
             color: #d3d3d3;
@@ -67,14 +90,11 @@
             font-family: 'Georgia', serif;
             text-align: center;
         }
-        footer {
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(246, 241, 241);
-            font-style: italic;
+
+        .gallery-items:hover {
+            transform: scale(1.05);
         }
+
         .overlay {
             display: none;
             position: fixed;
@@ -87,10 +107,7 @@
             align-items: center;
             z-index: 1000;
         }
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -100,25 +117,132 @@
             cursor: pointer;
             z-index: 1001;
         }
+
+        .overlay.show {
+            display: flex;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Intervenção artística em espaços públicos</h1>
-    </header>
-    <main>
-        <div class="gallery-container">
-            {% for foto in fotos %}
-                <div class="gallery-items">
-                    <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
-                        <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
-                    </a>
-                    <h2>{{ foto.name }}</h2>
-                    <p>{{ foto.description }}</p> 
-                </div>
-            {% endfor %}
-        </div>
+<section class="description-text" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px 20px; text-align: center; color: #FFFFFF;">
+    <main style="width: 100%; max-width: 1200px; padding: 20px;">
+        <!-- Título Principal -->
+        <header style="margin-bottom: 30px;">
+            <h1 style="color: #FF4500; font-size: 2.5rem; margin-bottom: 20px;">Produção de Murais Artísticos e Customizações Cenográficas</h1>
+        </header>
+
+        <p style="font-size: 1.125rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 20px;">
+            A <strong style="color: #FFFFFF">Vira Lata Produções Culturais e Artísticas</strong> é referência na criação de <strong>murais artísticos personalizados</strong>, 
+            <strong>customizações cenográficas</strong> e <strong>pinturas de grande escala</strong> em espaços urbanos e institucionais. Nossa equipe experiente, 
+            junto a parceiros especializados, transforma ambientes em verdadeiras obras de arte que aliam <span style="color: #FFFFFF">criatividade</span>, 
+            <span style="color: #FFFFFF;">impacto visual</span> e <span style="color: #FFFFFF;">segurança</span>.
+        </p>
+
+        <h2 style="color: #FF4500; font-size: 2rem; margin-bottom: 15px;">Especialidade em Grandes Proporções</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 30px;">
+            Somos reconhecidos pela produção de murais em empenas de prédios de grandes proporções, com total respeito às normas de segurança. 
+            Trabalhamos em parceria com fornecedores e especialistas em segurança do trabalho, garantindo a execução impecável em alturas e locais de difícil acesso.
+        </p>
+
+        <h3 style="color: #FF4500; font-size: 1.75rem; margin-bottom: 15px;">O Que Fazemos</h3>
+        <ul style="font-size: 1.1rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 30px;">
+            <li><span style="color: #FFFFFF">Murais Artísticos Personalizados</span> – Obras exclusivas que refletem identidade, história e valores dos espaços e clientes.</li>
+            <li><span style="color: #FFFFFF">Customizações Cenográficas</span> – Produção de cenografias criativas para eventos, exposições e espaços comerciais.</li>
+            <li><span style="color: #FFFFFF">Pinturas de Grandes Escalas</span> – Intervenções em empenas de prédios e complexos urbanos com impacto visual significativo.</li>
+        </ul>
+
+        <h3 style="color: #FF4500; font-size: 1.75rem; margin-bottom: 15px;">Nossos Êxitos</h3>
+        <ul style="font-size: 1.1rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 30px;">
+            <li><strong style="color: #FFFFFF;">Loures Arte Pública (Portugal)</strong> – Participação em um dos maiores festivais de arte urbana da Europa, com um mural que uniu técnica e identidade local.</li>
+            <li><strong style="color: #FFFFFF;">Festival CURA (Belo Horizonte)</strong> – Intervenção artística em grandes proporções, valorizando o cenário urbano e cultural.</li>
+            <li><strong style="color: #FFFFFF;">Festival Nubank (São Paulo)</strong> – Customização criativa para um dos principais eventos corporativos do país.</li>
+            <li><strong style="color: #FFFFFF;">Complexo Viário Beatriz (Contagem)</strong> – Pintura de grandes dimensões que revitalizou este importante ponto urbano da cidade.</li>
+            <li><strong style="color: #FFFFFF;">Mercado Central de Contagem</strong> – Murais que celebram a cultura hip hop e a diversidade local, criando uma nova identidade visual.</li>
+            <li><strong style="color: #FFFFFF;">Secretaria de Cultura de Varginha</strong> – Revitalização institucional que destacou a valorização cultural da região.</li>
+            <li><strong style="color: #FFFFFF">Customização de Aeronaves para Só Marcas (Contagem)</strong> – Pinturas exclusivas que aliam design e inovação para projetos corporativos.</li>
+        </ul>
+
+        <h3 style="color: #FF4500; font-size: 1.75rem; margin-bottom: 15px;">Por Que Escolher a Vira Lata</h3>
+        <ul style="font-size: 1.1rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 30px;">
+            <li><span style="color: #FFFFFF;">Expertise em Grandes Escalas</span> – Profissionais treinados e parcerias com especialistas em segurança para intervenções de alta complexidade.</li>
+            <li><span style="color: #FFFFFF;">Qualidade e Durabilidade</span> – Uso de materiais de alta performance e técnicas de pintura que garantem resultados impactantes e duradouros.</li>
+            <li><span style="color: #FFFFFF">Personalização Total</span> – Soluções criativas e exclusivas para atender às necessidades de cada cliente e espaço.</li>
+            <li><span style="color: #FFFFFF">Reconhecimento Nacional e Internacional</span> – Projetos realizados em diferentes contextos que atestam a qualidade do nosso trabalho.</li>
+        </ul>
+
+        <p style="font-size: 1.125rem; line-height: 1.8; color: #FFFFFF;">
+            Na <strong style="color:#FFFFFF">Vira Lata Produções Culturais e Artísticas</strong>, cada projeto é uma oportunidade de transformar espaços e criar conexões entre arte e comunidade. 
+            Entre em contato e descubra como podemos dar vida às suas ideias em qualquer escala!
+        </p>
     </main>
+</section>
+
+<style>
+    @media (max-width: 768px) {
+        .description-text main {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        ul {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+</body>
+    <div class="gallery-container">
+        {% for foto in fotos %}
+            <div class="gallery-items">
+                <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
+                    <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
+                </a>
+                <h2>{{ foto.name }}</h2>
+                <p>{{ foto.description }}</p> 
+            </div>
+        {% endfor %}
+    </div>
 
     <!-- Fullscreen overlay -->
     <div id="fullscreen-overlay" class="overlay">
@@ -132,27 +256,20 @@
             const fullscreenImage = document.getElementById('fullscreen-image');
             const closeBtn = document.getElementById('close-btn');
 
-            document.querySelectorAll('.image-link').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    fullscreenImage.src = this.dataset.imageUrl;
-                    fullscreenImage.alt = this.dataset.imageAlt;
-                    overlay.style.display = 'flex';
+            document.querySelectorAll('.image-link').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    fullscreenImage.src = link.dataset.imageUrl;
+                    fullscreenImage.alt = link.dataset.imageAlt;
+                    overlay.classList.add('show');
                 });
             });
 
             closeBtn.addEventListener('click', function() {
-                overlay.style.display = 'none';
-            });
-
-            overlay.addEventListener('click', function(event) {
-                if (event.target === overlay) {
-                    overlay.style.display = 'none';
-                }
+                overlay.classList.remove('show');
             });
         });
     </script>
 </body>
 </html>
-
-{% endblock body %}
+{% endblock %}
