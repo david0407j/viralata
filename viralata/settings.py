@@ -34,10 +34,22 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
 
 AUTH_USER_MODEL = "cores.User"
+ALLOWED_HOSTS = [
+    "viralata-1-purple-grass-6967.fly.dev",  # Domínio do Fly.io
+    "localhost",  # Para testes locais
+    "127.0.0.1",  # Para testes locais
+    "viralatacultural.com.br",  # Seu domínio principal
+    "www.viralatacultural.com.br",  # Subdomínio www
+]
 
-ALLOWED_HOSTS = ["viralata-1-purple-grass-6967.fly.dev", "localhost", "127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://viralata-1-purple-grass-6967.fly.dev",  # Inclua o esquema
+    "https://viralatacultural.com.br",  # Inclua o esquema
+]
+
 
 # Application definition
 

@@ -1,7 +1,10 @@
 DEBUG=False
 SECRET_KEY= defina sua chave secreta
 DATABASE_URL=postgres://davidson:davidson@localhost:5432/postgres
-ALLOWED_HOSTS=localhost, 127.0.0.1
+ALLOWED_HOSTS=viralata-1-purple-grass-6967.fly.dev,localhost,127.0.0.1,viralatacultural.com.br,www.viralatacultural.com.br
+CSRF_TRUSTED_ORIGINS=https://viralata-1-purple-grass-6967.fly.dev,https://viralatacultural.com.br,https://www.viralatacultural.com.br
+
+
 
 
 # Configurações do AWS
