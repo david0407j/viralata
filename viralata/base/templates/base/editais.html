@@ -7,14 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Arte - Vira Lata Intervenções Artísticas{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <title>Festival Muraliza Arte Pública</title>
     <style>
         body {
             background-color: #000000;
             color: #f5f0eb;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
 
         header h1 {
@@ -22,36 +21,40 @@
             font-weight: bold;
             color: #FF4500;
             font-size: 3rem;
+            text-align: center;
             margin-top: 40px;
-            margin-left: 20px;
             letter-spacing: 1px;
             line-height: 1.2;
         }
 
         .description-text {
-            font-size: 1.125rem;
+            font-size: 1rem;
             line-height: 1.6;
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 90%;
+            margin: 15px auto;
             padding: 15px;
-            text-align: left;
+            text-align: justify;
             color: #f5f0eb;
         }
 
-        .description-text h2,
-        .description-text h3 {
+        .instagram-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .instagram-link {
+            font-size: 1.3rem;
             color: #FF4500;
-            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
 
-        .description-text ul {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .description-text ul li {
-            margin-bottom: 10px;
+        .instagram-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
         }
 
         .gallery-container {
@@ -59,7 +62,6 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
-            justify-items: center;
         }
 
         .gallery-items {
@@ -71,7 +73,7 @@
 
         .gallery-items img {
             width: 100%;
-            height: 400px;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -89,10 +91,6 @@
             line-height: 1.4;
             font-family: 'Georgia', serif;
             text-align: center;
-        }
-
-        .gallery-items:hover {
-            transform: scale(1.05);
         }
 
         .overlay {
@@ -118,160 +116,140 @@
             z-index: 1001;
         }
 
-        .overlay.show {
-            display: flex;
-        }
-
-        .overlay img {
+        #fullscreen-image {
             max-width: 90%;
             max-height: 90%;
             object-fit: contain;
         }
+
+        @media (max-width: 768px) {
+            .gallery-items img {
+                height: auto;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .description-text {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .instagram-link {
+                font-size: 1rem;
+            }
+
+            .instagram-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container text-center my-5" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;">
-        <div class="productions-section" style="text-align: center;">
-            <header>
-                <h1>EDITAIS CULTURAIS</h1>
-            </header>
-            <h2 class="productions-title">
-                Produção e Inscrição de Projetos Culturais
-            </h2>
-            <p class="productions-lead">
-                A Vira Lata Produções Culturais e Artísticas oferece um serviço especializado de produção e inscrição de projetos culturais em Leis de Incentivo à Cultura nos âmbitos municipal, estadual e federal. Com ampla experiência no setor, nossa equipe acompanha todas as etapas do processo, desde a concepção da ideia até a formatação, redação e inscrição em editais e programas de incentivo, garantindo que seu projeto atenda aos requisitos técnicos e legais exigidos.
-            </p>
-            <h3 class="productions-subtitle">
-                Nossos Resultados
-            </h3>
-            <p class="productions-lead">
-                Ao longo dos anos, a Vira Lata tem conquistado resultados expressivos:
-            </p>
-            <ul class="productions-lead">
-                <li>Edital Paulo Gustavo – Projetos aprovados e realizados com foco em diversas manifestações artísticas, promovendo inclusão e acessibilidade.</li>
-                <li>Lei Aldir Blanc – Experiência comprovada na execução de projetos culturais voltados para a valorização de artistas locais e fortalecimento da economia criativa.</li>
-                <li>Editais Municipais e Estaduais – Reconhecimento em editais da Secretaria de Cultura de Minas Gerais e prefeituras, como o Edital de Fomento Cultural Secult MG, que garantiram a realização de ações culturais de impacto em diversas comunidades.</li>
-                <li>Premiações Culturais – Nossa trajetória inclui conquistas em editais de destaque, atestando a qualidade e relevância dos projetos que desenvolvemos.</li>
-            </ul>
-            <h3 class="productions-subtitle">
-                O que oferecemos
-            </h3>
-            <ul class="productions-lead">
-                <li>Consultoria Personalizada – Análise estratégica de ideias para adequação às exigências de cada edital.</li>
-                <li>Redação e Formatação – Desenvolvimento de propostas criativas e alinhadas aos critérios técnicos.</li>
-                <li>Gestão Burocrática – Suporte completo com documentação, inscrição e acompanhamento das etapas de seleção.</li>
-                <li>Capacitação de Proponentes – Orientação e treinamento para elaboração de projetos culturais de sucesso.</li>
-            </ul>
-            <p class="productions-lead">
-                Combinando criatividade e expertise técnica, a Vira Lata Produções Culturais e Artísticas transforma ideias em ações que impactam e valorizam a cultura local. Trabalhamos para fortalecer o setor cultural, conectar pessoas e proporcionar experiências únicas através da arte e da cultura.
-            </p>
-            <p class="productions-lead">
-                Entre em contato e leve sua ideia ao próximo nível!
-            </p>
-        </div>
+    <section class="description-text" style="color: #FFFFFF; font-family: 'Staatliches', sans-serif; padding: 40px; background-color: #00000000; text-align: center;">
+        <header style="margin-bottom: 30px;">
+            <h1 style="font-weight: bold; color: #FF4500; font-size: 3rem; font-family: 'Staatliches', sans-serif;">
+                EDITAIS CULTURAIS
+            </h1>
+        </header>
+    
+        <h2 class="productions-title" style="font-weight: bold; color: #FF4500; font-size: 2rem; font-family: 'Staatliches', sans-serif; text-transform: uppercase;">
+            Produção e Inscrição de Projetos Culturais
+        </h2>
+    
+        <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3; margin-bottom: 20px;">
+            A Vira Lata Produções Culturais e Artísticas oferece um serviço especializado de produção e inscrição de projetos culturais em Leis de Incentivo à Cultura nos âmbitos municipal, estadual e federal. 
+        </p>
+    
+        <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3; margin-bottom: 20px;">
+            Com ampla experiência no setor, nossa equipe acompanha todas as etapas do processo, desde a concepção da ideia até a formatação, redação e inscrição em editais e programas de incentivo, garantindo que seu projeto atenda aos requisitos técnicos e legais exigidos.
+        </p>
+    
+        <h3 class="productions-subtitle" style="font-weight: bold; color: #FF4500; font-size: 2rem; font-family: 'Staatliches', sans-serif; text-transform: uppercase;">
+            Nossos Resultados
+        </h3>
+    
+        <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3; margin-bottom: 20px;">
+            Ao longo dos anos, a Vira Lata tem conquistado resultados expressivos:
+        </p>
+    
+        <ul class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3; list-style: inside; margin-bottom: 20px;">
+            <li>Edital Paulo Gustavo – Projetos aprovados e realizados com foco em diversas manifestações artísticas, promovendo inclusão e acessibilidade.</li>
+            <li>Lei Aldir Blanc – Experiência comprovada na execução de projetos culturais voltados para a valorização de artistas locais e fortalecimento da economia criativa.</li>
+            <li>Editais Municipais e Estaduais – Reconhecimento em editais da Secretaria de Cultura de Minas Gerais e prefeituras, como o Edital de Fomento Cultural Secult MG, que garantiram a realização de ações culturais de impacto em diversas comunidades.</li>
+            <li>Premiações Culturais – Nossa trajetória inclui conquistas em editais de destaque, atestando a qualidade e relevância dos projetos que desenvolvemos.</li>
+        </ul>
+    
+        <h3 class="productions-subtitle" style="font-weight: bold; color: #FF4500; font-size: 2rem; font-family: 'Staatliches', sans-serif; text-transform: uppercase;">
+            O que oferecemos
+        </h3>
+    
+        <ul class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3; list-style: inside; margin-bottom: 20px;">
+            <li>Consultoria Personalizada – Análise estratégica de ideias para adequação às exigências de cada edital.</li>
+            <li>Redação e Formatação – Desenvolvimento de propostas criativas e alinhadas aos critérios técnicos.</li>
+            <li>Gestão Burocrática – Suporte completo com documentação, inscrição e acompanhamento das etapas de seleção.</li>
+            <li>Capacitação de Proponentes – Orientação e treinamento para elaboração de projetos culturais de sucesso.</li>
+        </ul>
+    
+        <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3; margin-bottom: 20px;">
+            Combinando criatividade e expertise técnica, a Vira Lata Produções Culturais e Artísticas transforma ideias em ações que impactam e valorizam a cultura local. Trabalhamos para fortalecer o setor cultural, conectar pessoas e proporcionar experiências únicas através da arte e da cultura.
+        </p>
+    
+        <p class="productions-lead" style="font-size: 1.25rem; font-weight: 600; line-height: 1.8; color: #d3d3d3;">
+            Entre em contato e leve sua ideia ao próximo nível!
+        </p>
+    </section>
+    
+    <div class="gallery-container">
+        {% for foto in fotos %}
+            <div class="gallery-items">
+                <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
+                <h2>{{ foto.name }}</h2>
+                <p>{{ foto.description }}</p>
+            </div>
+        {% endfor %}
     </div>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+    <!-- Fullscreen overlay -->
+    <div id="fullscreen-overlay" class="overlay">
+        <span id="close-btn" class="close-btn">&times;</span>
+        <img id="fullscreen-image" src="" alt="">
+    </div>
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 0 20px;
-        }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('fullscreen-overlay');
+            const fullscreenImage = document.getElementById('fullscreen-image');
+            const closeBtn = document.getElementById('close-btn');
 
-        .productions-section {
-            max-width: 1200px;
-            text-align: center;
-        }
-
-        h1, h2, h3 {
-            color: #FF4500; /* Laranja para os títulos */
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-top: 20px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-
-        p, ul {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-top: 10px;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        .productions-lead {
-            margin-bottom: 20px;
-        }
-    </style>
-</body>
- <div class="gallery-container">
-                {% for foto in fotos %}
-                    <div class="gallery-items">
-                        <a href="#" class="image-link" data-image-url="{{ foto.image.url }}" data-image-alt="{{ foto.name }}">
-                            <img src="{{ foto.image.url }}" alt="{{ foto.name }}">
-                        </a>
-                        <h2>{{ foto.name }}</h2>
-                        <p>{{ foto.description }}</p> 
-                    </div>
-                {% endfor %}
-            </div>
-        </main>
-        <!-- Fullscreen overlay -->
-        <div id="fullscreen-overlay" class="overlay">
-            <span id="close-btn" class="close-btn">&times;</span>
-            <img id="fullscreen-image" src="" alt="">
-        </div>
-    
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const overlay = document.getElementById('fullscreen-overlay');
-                const fullscreenImage = document.getElementById('fullscreen-image');
-                const closeBtn = document.getElementById('close-btn');
-    
-                document.querySelectorAll('.image-link').forEach(link => {
-                    link.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        fullscreenImage.src = this.dataset.imageUrl;
-                        fullscreenImage.alt = this.dataset.imageAlt;
-                        overlay.classList.add('show');
-                    });
-                });
-    
-                closeBtn.addEventListener('click', function() {
-                    overlay.classList.remove('show');
-                });
-    
-                overlay.addEventListener('click', function(event) {
-                    if (event.target === overlay) {
-                        overlay.classList.remove('show');
-                    }
+            document.querySelectorAll('.gallery-items img').forEach(img => {
+                img.addEventListener('click', function() {
+                    fullscreenImage.src = this.src;
+                    fullscreenImage.alt = this.alt;
+                    overlay.style.display = 'flex';
                 });
             });
-        </script>
-    </div>
+
+            closeBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+
+            overlay.addEventListener('click', function(event) {
+                if (event.target === overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 {% endblock body %}
