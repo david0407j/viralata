@@ -57,6 +57,7 @@ jobs:
           echo "CSRF_TRUSTED_ORIGINS=['http://localhost', 'http://127.0.0.1']" >> .env
           echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
           echo "DEBUG=True" >> .env
+          echo "ALLOWED_HOSTS=localhost,127.0.0.1" >> .env
 
       - name: Instalar dependências
         run: |
@@ -74,5 +75,3 @@ jobs:
       - name: Executar testes
         run: |
           poetry run pytest
-
-
