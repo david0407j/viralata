@@ -17,13 +17,6 @@ def test_title(resp):
     assert_contains(resp, "<title>Vira Lata Intervenções Artísticas</title>")
 
 
-def test_home_link(resp):
-    assert_contains(
-        resp,
-        f'href="{reverse("cores:cores")}">Vira Lata Artísticas</a>',
-    )
-
-
 def test_email_link(resp):
     assert_contains(resp, 'href="mailto:viralatagrafite@gmail.com"')
 

@@ -23,11 +23,6 @@ jobs:
           POSTGRES_DB: postgres
         ports:
           - '5432:5432'
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
 
     steps:
       - name: Checkout do repositório
@@ -55,7 +50,7 @@ jobs:
           echo "POSTGRES_PASSWORD=davidson" >> .env
           echo "POSTGRES_DB=postgres" >> .env
           echo "CSRF_TRUSTED_ORIGINS=['http://localhost', 'http://127.0.0.1']" >> .env
-          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "SECRET_KEY=supersecreta12345" >> .env
           echo "DEBUG=True" >> .env
           echo "ALLOWED_HOSTS=localhost,127.0.0.1" >> .env
 
@@ -75,3 +70,4 @@ jobs:
       - name: Executar testes
         run: |
           poetry run pytest
+
