@@ -56,6 +56,7 @@ jobs:
           echo "POSTGRES_DB=postgres" >> .env
           echo "CSRF_TRUSTED_ORIGINS=['http://localhost', 'http://127.0.0.1']" >> .env
           echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "DEBUG=True" >> .env
 
       - name: Instalar dependências
         run: |
